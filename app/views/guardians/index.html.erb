@@ -1,0 +1,37 @@
+<h1>Listing guardians</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Work phone</th>
+      <th>Home phone</th>
+      <th>Email</th>
+      <th>Profession</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guardians.each do |guardian| %>
+      <tr>
+        <td><%= guardian.first_name %></td>
+        <td><%= guardian.last_name %></td>
+        <td><%= guardian.work_phone %></td>
+        <td><%= guardian.home_phone %></td>
+        <td><%= guardian.email %></td>
+        <td><%= guardian.profession %></td>
+        <td><%= link_to 'Show', guardian %></td>
+        <td><%= link_to 'Edit', edit_guardian_path(guardian) %></td>
+        <td><%= link_to 'Destroy', guardian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guardian', new_guardian_path %>
