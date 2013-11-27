@@ -1,4 +1,6 @@
 Cosc578app::Application.routes.draw do
+  resources :schools
+
   resources :guardians
 
   resources :books
