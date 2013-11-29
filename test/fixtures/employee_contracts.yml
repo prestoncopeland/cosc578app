@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_date: 2013-11-29 03:19:15
+  contract_date: 2013-11-29 03:19:15
+  employee_id: 
+  pay_rate: 9.99
+  type: 
+
+two:
+  start_date: 2013-11-29 03:19:15
+  contract_date: 2013-11-29 03:19:15
+  employee_id: 
+  pay_rate: 9.99
+  type: 

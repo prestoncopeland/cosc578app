@@ -1,0 +1,35 @@
+<h1>Listing employee_contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>Contract date</th>
+      <th>Employee</th>
+      <th>Pay rate</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee_contracts.each do |employee_contract| %>
+      <tr>
+        <td><%= employee_contract.start_date %></td>
+        <td><%= employee_contract.contract_date %></td>
+        <td><%= employee_contract.employee %></td>
+        <td><%= employee_contract.pay_rate %></td>
+        <td><%= employee_contract.type %></td>
+        <td><%= link_to 'Show', employee_contract %></td>
+        <td><%= link_to 'Edit', edit_employee_contract_path(employee_contract) %></td>
+        <td><%= link_to 'Destroy', employee_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee contract', new_employee_contract_path %>

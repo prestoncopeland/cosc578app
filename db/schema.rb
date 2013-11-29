@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129080406) do
+ActiveRecord::Schema.define(version: 20131129083604) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(version: 20131129080406) do
   add_index "daily_data", ["employee_id"], name: "index_daily_data_on_employee_id"
   add_index "daily_data", ["payment_id"], name: "index_daily_data_on_payment_id"
   add_index "daily_data", ["student_id"], name: "index_daily_data_on_student_id"
+
+  create_table "employee_contracts", force: true do |t|
+    t.datetime "start_date"
+    t.datetime "contract_date"
+    t.integer  "employee_id"
+    t.decimal  "pay_rate"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employee_contracts", ["employee_id"], name: "index_employee_contracts_on_employee_id"
 
   create_table "employees", force: true do |t|
     t.string   "first_name"
@@ -225,6 +237,28 @@ ActiveRecord::Schema.define(version: 20131129080406) do
     t.text     "program_goals"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "suppliers", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "typical_supply"
+    t.string   "contact_person"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "supplies", force: true do |t|
+    t.string   "type"
+    t.integer  "quantity"
+    t.decimal  "cost"
+    t.integer  "budget_id"
+    t.integer  "supplier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "date_purchased"
   end
 
   create_table "tutors_subjects", force: true do |t|

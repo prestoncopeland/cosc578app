@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @employee_contract.start_date %>
+</p>
+
+<p>
+  <strong>Contract date:</strong>
+  <%= @employee_contract.contract_date %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @employee_contract.employee %>
+</p>
+
+<p>
+  <strong>Pay rate:</strong>
+  <%= @employee_contract.pay_rate %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @employee_contract.type %>
+</p>
+
+<%= link_to 'Edit', edit_employee_contract_path(@employee_contract) %> |
+<%= link_to 'Back', employee_contracts_path %>

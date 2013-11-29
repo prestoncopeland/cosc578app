@@ -1,4 +1,10 @@
 Cosc578app::Application.routes.draw do
+  resources :suppliers
+
+  resources :supplies
+
+  resources :employee_contracts
+
   resources :student_hour_transfers
 
   resources :daily_data

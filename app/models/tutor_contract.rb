@@ -1,0 +1,2 @@
+class TutorContract < EmployeeContract
+end

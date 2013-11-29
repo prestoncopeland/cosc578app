@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @supply.type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @supply.quantity %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @supply.cost %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @supply.budget_id %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @supply.supplier_id %>
+</p>
+
+<%= link_to 'Edit', edit_supply_path(@supply) %> |
+<%= link_to 'Back', supplies_path %>
