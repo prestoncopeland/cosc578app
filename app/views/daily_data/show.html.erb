@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Referral source:</strong>
+  <%= @daily_datum.referral_source %>
+</p>
+
+<p>
+  <strong>Student action:</strong>
+  <%= @daily_datum.student_action %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @daily_datum.notes %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @daily_datum.employee %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @daily_datum.student %>
+</p>
+
+<%= link_to 'Edit', edit_daily_datum_path(@daily_datum) %> |
+<%= link_to 'Back', daily_data_path %>

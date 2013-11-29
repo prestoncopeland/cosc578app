@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  referral_source: MyString
+  student_action: MyString
+  notes: MyText
+  employee_id: 
+  student_id: 
+
+two:
+  referral_source: MyString
+  student_action: MyString
+  notes: MyText
+  employee_id: 
+  student_id: 

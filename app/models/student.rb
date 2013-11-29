@@ -15,4 +15,6 @@ class Student < ActiveRecord::Base
 
   has_many :payments, through: :contracts
 
+  has_many :daily_data
+
 end

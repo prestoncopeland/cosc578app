@@ -9,4 +9,6 @@ class Guardian < ActiveRecord::Base
   has_many :contracts_guardians
 
   has_many :payments, through: :contracts
+
+  has_many :meeting_participants
 end

@@ -1,0 +1,2 @@
+class Meeting < DailyDatum
+end

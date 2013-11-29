@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129040251) do
+ActiveRecord::Schema.define(version: 20131129071220) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -54,6 +54,25 @@ ActiveRecord::Schema.define(version: 20131129040251) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "daily_data", force: true do |t|
+    t.string   "type"
+    t.string   "referral_source"
+    t.string   "student_action"
+    t.text     "notes"
+    t.string   "target"
+    t.boolean  "successful?"
+    t.integer  "employee_id"
+    t.integer  "student_id"
+    t.integer  "payment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "date"
+  end
+
+  add_index "daily_data", ["employee_id"], name: "index_daily_data_on_employee_id"
+  add_index "daily_data", ["payment_id"], name: "index_daily_data_on_payment_id"
+  add_index "daily_data", ["student_id"], name: "index_daily_data_on_student_id"
 
   create_table "employees", force: true do |t|
     t.string   "first_name"
@@ -101,6 +120,16 @@ ActiveRecord::Schema.define(version: 20131129040251) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "meeting_participants", force: true do |t|
+    t.integer  "daily_datum_id"
+    t.integer  "guardian_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "meeting_participants", ["daily_datum_id"], name: "index_meeting_participants_on_daily_datum_id"
+  add_index "meeting_participants", ["guardian_id"], name: "index_meeting_participants_on_guardian_id"
 
   create_table "payments", force: true do |t|
     t.decimal  "amount"
