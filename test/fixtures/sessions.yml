@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hours: 9.99
+  date: 2013-11-28 20:40:10
+  type: 
+  student_id: 
+  tutor_id: 
+
+two:
+  hours: 9.99
+  date: 2013-11-28 20:40:10
+  type: 
+  student_id: 
+  tutor_id: 

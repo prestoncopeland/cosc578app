@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-11-28 22:25:53
+  enrollment_date: 2013-11-28 22:25:53
+  final_class_date: 2013-11-28 22:25:53
+  final_interim_test: 2013-11-28 22:25:53
+  hours: 9.99
+  amount_paid: 9.99
+  paid_hours: 9.99
+  used_hours: 9.99
+  remaining_hours: 9.99
+  new_or_renew: false
+  dt_date: 2013-11-28 22:25:53
+  dc_date: 2013-11-28 22:25:53
+  dt_amount: 9.99
+  est_class_schedule: MyString
+  hrs_per_week: 9.99
+  chart_rate: 9.99
+  tuition: 9.99
+  dsc: 9.99
+  program_explanation: MyText
+  total_money: 9.99
+  student_id: 
+
+two:
+  date: 2013-11-28 22:25:53
+  enrollment_date: 2013-11-28 22:25:53
+  final_class_date: 2013-11-28 22:25:53
+  final_interim_test: 2013-11-28 22:25:53
+  hours: 9.99
+  amount_paid: 9.99
+  paid_hours: 9.99
+  used_hours: 9.99
+  remaining_hours: 9.99
+  new_or_renew: false
+  dt_date: 2013-11-28 22:25:53
+  dc_date: 2013-11-28 22:25:53
+  dt_amount: 9.99
+  est_class_schedule: MyString
+  hrs_per_week: 9.99
+  chart_rate: 9.99
+  tuition: 9.99
+  dsc: 9.99
+  program_explanation: MyText
+  total_money: 9.99
+  student_id: 

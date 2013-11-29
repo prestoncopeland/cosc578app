@@ -1,0 +1,3 @@
+class NonWorkSession < Session
+
+end

@@ -1,4 +1,16 @@
 Cosc578app::Application.routes.draw do
+  resources :resources
+
+  resources :contracts
+
+  resources :payments
+
+  resources :sessions
+
+  resources :employees
+
+  resources :siblings
+
   resources :schools
 
   resources :guardians

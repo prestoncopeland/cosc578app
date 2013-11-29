@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @sibling.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @sibling.last_name %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @sibling.grade %>
+</p>
+
+<%= link_to 'Edit', edit_sibling_path(@sibling) %> |
+<%= link_to 'Back', siblings_path %>

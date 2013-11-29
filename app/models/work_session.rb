@@ -1,0 +1,3 @@
+class WorkSession < Session
+
+end

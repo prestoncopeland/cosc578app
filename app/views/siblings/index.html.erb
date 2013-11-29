@@ -1,0 +1,31 @@
+<h1>Listing siblings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Grade</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @siblings.each do |sibling| %>
+      <tr>
+        <td><%= sibling.first_name %></td>
+        <td><%= sibling.last_name %></td>
+        <td><%= sibling.grade %></td>
+        <td><%= link_to 'Show', sibling %></td>
+        <td><%= link_to 'Edit', edit_sibling_path(sibling) %></td>
+        <td><%= link_to 'Destroy', sibling, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sibling', new_sibling_path %>

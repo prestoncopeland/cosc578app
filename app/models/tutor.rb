@@ -1,0 +1,2 @@
+class Tutor < Employee
+end

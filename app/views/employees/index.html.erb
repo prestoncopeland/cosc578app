@@ -1,0 +1,59 @@
+<h1>Listing employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Nickname</th>
+      <th>Birthdate</th>
+      <th>Ssn</th>
+      <th>Ethnicity</th>
+      <th>Interview date</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Home phone</th>
+      <th>Cell phone</th>
+      <th>Email</th>
+      <th>Career goals</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.middle_name %></td>
+        <td><%= employee.last_name %></td>
+        <td><%= employee.nickname %></td>
+        <td><%= employee.birthdate %></td>
+        <td><%= employee.ssn %></td>
+        <td><%= employee.ethnicity %></td>
+        <td><%= employee.interview_date %></td>
+        <td><%= employee.street %></td>
+        <td><%= employee.city %></td>
+        <td><%= employee.state %></td>
+        <td><%= employee.zip %></td>
+        <td><%= employee.home_phone %></td>
+        <td><%= employee.cell_phone %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.career_goals %></td>
+        <td><%= employee.type %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>

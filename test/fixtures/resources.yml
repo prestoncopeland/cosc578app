@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  subject: MyString
+  pages: 1
+  publication_year: 1
+  purchase_date: 2013-11-28 23:02:51
+
+two:
+  title: MyString
+  subject: MyString
+  pages: 1
+  publication_year: 1
+  purchase_date: 2013-11-28 23:02:51

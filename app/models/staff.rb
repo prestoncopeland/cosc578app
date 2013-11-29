@@ -1,0 +1,2 @@
+class Staff < Employee
+end
