@@ -17,4 +17,6 @@ class Student < ActiveRecord::Base
 
   has_many :daily_data
 
+   has_many :student_hour_transfers_as_student_to, :class_name => 'StudentHourTransfer', :foreign_key => 'student_to_id'
+  has_many :student_hour_transfers_as_student_from, :class_name => 'StudentHourTransfer', :foreign_key => 'student_from_id'
 end

@@ -1,4 +1,6 @@
 Cosc578app::Application.routes.draw do
+  resources :student_hour_transfers
+
   resources :daily_data
 
   resources :resources

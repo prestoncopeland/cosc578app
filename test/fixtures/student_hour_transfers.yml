@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hours_transferred: 9.99
+  employee_id: 
+
+two:
+  hours_transferred: 9.99
+  employee_id: 

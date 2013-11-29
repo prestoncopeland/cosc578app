@@ -1,0 +1,29 @@
+<h1>Listing student_hour_transfers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hours transferred</th>
+      <th>Employee</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_hour_transfers.each do |student_hour_transfer| %>
+      <tr>
+        <td><%= student_hour_transfer.hours_transferred %></td>
+        <td><%= student_hour_transfer.employee %></td>
+        <td><%= link_to 'Show', student_hour_transfer %></td>
+        <td><%= link_to 'Edit', edit_student_hour_transfer_path(student_hour_transfer) %></td>
+        <td><%= link_to 'Destroy', student_hour_transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student hour transfer', new_student_hour_transfer_path %>

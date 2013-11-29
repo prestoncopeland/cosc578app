@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129071220) do
+ActiveRecord::Schema.define(version: 20131129080406) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20131129071220) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "job_category"
   end
 
   create_table "guardians", force: true do |t|
@@ -196,6 +197,17 @@ ActiveRecord::Schema.define(version: 20131129071220) do
     t.datetime "updated_at"
   end
 
+  create_table "student_hour_transfers", force: true do |t|
+    t.decimal  "hours_transferred"
+    t.integer  "employee_id"
+    t.integer  "student_from_id"
+    t.integer  "student_to_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "student_hour_transfers", ["employee_id"], name: "index_student_hour_transfers_on_employee_id"
+
   create_table "students", force: true do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -214,5 +226,14 @@ ActiveRecord::Schema.define(version: 20131129071220) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tutors_subjects", force: true do |t|
+    t.integer  "employee_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tutors_subjects", ["employee_id"], name: "index_tutors_subjects_on_employee_id"
 
 end
