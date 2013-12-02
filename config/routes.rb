@@ -1,4 +1,7 @@
 Cosc578app::Application.routes.draw do
+
+  root 'static_pages#index'
+
   resources :suppliers
 
   resources :supplies
@@ -69,7 +72,7 @@ Cosc578app::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
