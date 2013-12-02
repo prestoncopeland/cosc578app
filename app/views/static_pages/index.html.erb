@@ -339,9 +339,11 @@ This template build on DevKit http://www.bootstraptor.com
 		<!-- CAPTION -->
 		<div class="caption">
 			<h4 class="text-center">ADD AN EMPLOYEE</h4>
-			<a class="btn btn-block btn-primary" href="#">
-			<i class="icon-link icon-large"></i>
-			</a>
+			<p>
+      <%= link_to(new_employee_path, :class => 'btn btn-block btn-primary') do %>
+        <i class="icon-link icon-large"> </i>
+        <% end %>
+      </p>
 			<p></p>
 		</div>
 		<!--END CAPTION -->
