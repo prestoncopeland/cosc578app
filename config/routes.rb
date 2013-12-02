@@ -2,6 +2,7 @@ Cosc578app::Application.routes.draw do
 
   root 'static_pages#index'
 
+  get 'static_pages/about' => 'static_pages#about'
   resources :suppliers
 
   resources :supplies

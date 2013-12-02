@@ -96,6 +96,7 @@ This template build on DevKit http://www.bootstraptor.com
 		min-width:100%;
 	}
 	footer{
+    text-align:center;
 		padding-top:40px;
 		margin-top:40px;
 		border-top:1px solid #dedede;
@@ -220,47 +221,51 @@ This template build on DevKit http://www.bootstraptor.com
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-          <h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><%= link_to 'New book', new_book_path, class: "btn btn-default" %>
+          <h4 class="text-center"><i class="icon-fullscreen"></i> DAILY DATA</h4>
+				<p>Enter the details of a payment transaction for a student. </p>
+				<p><%= link_to 'Daily Data', new_daily_datum_path, class: "btn btn-default" %>
 				</p>
 		  </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-				<h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-					<p><a class="btn btn-default" href="http://twitter.github.io/bootstrap/examples/hero.html#">View details »</a></p>
+				<h4 class="text-center"><i class="icon-fullscreen"></i> SESSIONS</h4>
+					<p>Enter or view the scheduling details for a given day. </p>
+					<p><%= link_to 'Sessions', sessions_path, class: "btn btn-default" %>
+        </p>
 			</div>
 	   </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-				<h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-					<p><a class="btn btn-default" href="http://twitter.github.io/bootstrap/examples/hero.html#">View details »</a></p>
+				<h4 class="text-center"><i class="icon-fullscreen"></i> STUDENT CONTRACTS</h4>
+					<p>Create, edit, or search for student contracts. </p>
+					<p><%= link_to 'Student Contracts', contracts_path, class: "btn btn-default" %>
+        </p>
 			</div>
 	   </div>
 
 	   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-          <h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a class="btn btn-default" href="http://twitter.github.io/bootstrap/examples/hero.html#">View details »</a>
-				</p>
+          <h4 class="text-center"><i class="icon-fullscreen"></i> EMPLOYEE CONTRACTS AND APPLICATIONS</h4>
+				<p>View employee contracts and recent applications. </p>
+				<p><%= link_to 'Contracts and Applications', employee_contracts_path, class: "btn btn-default" %>
+        </p>
 		  </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-				<h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-					<p><a class="btn btn-default" href="http://twitter.github.io/bootstrap/examples/hero.html#">View details »</a></p>
+				<h4 class="text-center"><i class="icon-fullscreen"></i> TRANSFER STUDENT HOURS</h4>
+					<p>Transfer student hours and view records of those transfers. </p>
+					<p><%= link_to 'Student Hour Transfers', student_hour_transfers_path, class: "btn btn-default" %>
+        </p>
 			</div>
 	   </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="well">
-				<h4 class="text-center"><i class="icon-fullscreen"></i> RESPONSIVE TEMPLATE</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-					<p><a class="btn btn-default" href="http://twitter.github.io/bootstrap/examples/hero.html#">View details »</a></p>
+				<h4 class="text-center"><i class="icon-fullscreen"></i> RESOURCES</h4>
+					<p>View available center resources, school contacts, and books purchased by students. </p>
+					<p><%= link_to 'Resources', resources_path, class: "btn btn-default" %>
+        </p>
 			</div>
 	   </div>
 
@@ -286,7 +291,7 @@ This template build on DevKit http://www.bootstraptor.com
 		<div class="caption">
 			<h4 class="text-center">ADD A STUDENT</h4>
 			<p>
-        <%= link_to(new_student_path, :class => 'btn btn-block btn-success') do %>
+        <%= link_to(new_student_path, :class => 'btn btn-block btn-primary') do %>
         <i class="icon-link icon-large"> </i>
         <% end %>
 			</p>
@@ -307,9 +312,9 @@ This template build on DevKit http://www.bootstraptor.com
     <div class="caption">
       <h4 class="text-center">ENTER A SUPPLY</h4>
       <p>
-      <a class="btn btn-block btn-success" href="#">
-      <i class="icon-link icon-large"></i>
-      </a>
+      <%= link_to(new_supply_path, :class => 'btn btn-block btn-primary') do %>
+        <i class="icon-link icon-large"> </i>
+        <% end %>
       </p>
     </div>
     <!--END CAPTION -->
@@ -327,7 +332,7 @@ This template build on DevKit http://www.bootstraptor.com
 		<!-- CAPTION -->
 		<div class="caption">
 			<h4 class="text-center">ADD AN EMPLOYEE</h4>
-			<a class="btn btn-block btn-success" href="#">
+			<a class="btn btn-block btn-primary" href="#">
 			<i class="icon-link icon-large"></i>
 			</a>
 			<p></p>
@@ -348,7 +353,7 @@ This template build on DevKit http://www.bootstraptor.com
 		<div class="caption">
 			<h4 class="text-center">ENTER A RESOURCE</h4>
 			<p>
-			<a class="btn btn-block btn-success" href="#">
+			<a class="btn btn-block btn-primary" href="#">
 			<i class="icon-link icon-large"></i>
 			</a>
 			</p>
@@ -368,44 +373,11 @@ This template build on DevKit http://www.bootstraptor.com
 <!--/ CONTENT -->
 
 <!-- FOOTER-->
-<footer>
+<footer class = "text-center">
 <div class="container">
 	<div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <h4 class="line3 center standart-h4title"><span>Navigation</span></h4>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">project</a></li>
-          <li><a href="#">Elements</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <h4 class="line3 center standart-h4title"><span>Useful Links</span></h4>
-        <ul class="footer-links">
-          <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-          <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-         <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-         <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-         <li><a href="http://www.bootstraptor.com">Bootstrap templates</a></li>
-        </ul>
-    </div>
-
-	<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <h4 class="line3 center standart-h4title"><span>Useful Links</span></h4>
-        <ul class="footer-links">
-          <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-          <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-		<li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-         <li><a href="http://www.bootstraptor.com">Bootstraptor.com</a></li>
-         <li><a href="http://www.bootstraptor.com">Bootstrap templates</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <h4 class="line3 center standart-h4title"><span>Project Group Members</span></h4>
+            <h4 class="line3 center standart-h4title">
+    <span>Project Group Members</span></h4>
 		<address>
 
 			<i class="icon-map-marker"></i> Scott Copeland<br>
@@ -418,9 +390,13 @@ This template build on DevKit http://www.bootstraptor.com
 		</address>
     </div>
 
-</div>
+
+
 	<hr>
+
         <p>COSC 578 Database Final Project</p>
+        <p>December 2013</p>
+
   </div><!-- CONTAINER FOOTER-->
 
 </footer>

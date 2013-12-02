@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+  <div class="container">
+    <%= f.label :kind %><br>
+    <%= f.text_field :kind %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :quantity %><br>
     <%= f.number_field :quantity %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :cost %><br>
     <%= f.text_field :cost %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :budget_id %><br>
     <%= f.number_field :budget_id %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :supplier_id %><br>
     <%= f.number_field :supplier_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="container">
+    <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>
