@@ -1,3 +1,4 @@
+
 <%= form_for(@student) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
@@ -11,63 +12,63 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :middle_name %><br>
     <%= f.text_field :middle_name %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :nickname %><br>
     <%= f.text_field :nickname %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :birthdate %><br>
     <%= f.datetime_select :birthdate %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :grade %><br>
     <%= f.text_field :grade %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :ethnicity %><br>
     <%= f.text_field :ethnicity %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :street %><br>
     <%= f.text_field :street %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :city %><br>
     <%= f.text_field :city %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :zip %><br>
     <%= f.number_field :zip %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :is_active? %><br>
     <%= f.check_box :is_active? %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :program_goals %><br>
     <%= f.text_area :program_goals %>
   </div>
-  <div class="actions">
+  <div class="container action">
     <%= f.submit %>
   </div>
 <% end %>

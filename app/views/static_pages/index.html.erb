@@ -54,10 +54,6 @@ This template build on DevKit http://www.bootstraptor.com
 		border-radius:0px;
 	}
 
-
-
-
-
 	header .jumbotron{
 		-webkit-border-radius: 0px;
 		-moz-border-radius: 0px;
@@ -150,58 +146,8 @@ This template build on DevKit http://www.bootstraptor.com
 <!-- MAIN WRAPPER class="wrapper" max-width="1110px"-->
 <div class="wrapper">
 <header>
-	<!-- NAVBAR-->
-<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-	  <!-- Brand and toggle get grouped for better mobile display -->
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="#">C2 Education</a>
-	  </div>
-
-	  <!-- Collect the nav links, forms, and other content for toggling -->
-	  <div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav">
-		   <li><a href="#">Link 1</a></li>
-		  <li><a href="#">Link 2</a></li>
-		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-			<ul class="dropdown-menu">
-			  <li><a href="#">Action</a></li>
-			  <li><a href="#">Another action</a></li>
-			  <li><a href="#">Something else here</a></li>
-			  <li><a href="#">Separated link</a></li>
-			  <li><a href="#">One more separated link</a></li>
-			</ul>
-		  </li>
-		</ul>
-		<form class="navbar-form navbar-right visible-lg" role="search">
-		  <div class="form-group">
-			<input type="text" class="form-control" placeholder="Search">
-		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-	</div><!-- /.navbar-collapse -->
-	</div>
-</nav>
-
-    <!-- PAGE-HEADER-->
-	<div class="jumbotron">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h1>Welcome to the C2 Database!</h1>
-					</div>
-				</div>
-			</div>
-    </div>
 </header>
-<!-- PAGE-HEADER-->
+
 
 <div class="container sub">
     <!-- row-fluid-->
@@ -334,15 +280,15 @@ This template build on DevKit http://www.bootstraptor.com
  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	<div class="thumbnail">
         <!-- IMAGE CONTAINER-->
-        <img src="http://lorempixel.com/260/195/technics/1" alt="">
+        <img src="http://www.evolllution.com/wp-content/uploads/2013/07/Busy-Student.jpg" alt="">
 		<!--END IMAGE CONTAINER-->
 		<!-- CAPTION -->
 		<div class="caption">
-			<h4 class="text-center">PROJECT TITLE</h4>
+			<h4 class="text-center">ADD A STUDENT</h4>
 			<p>
-			<a class="btn btn-block btn-success" href="#">
-			<i class="icon-link icon-large"></i> Read more
-			</a>
+        <%= link_to(new_student_path, :class => 'btn btn-block btn-success') do %>
+        <i class="icon-link icon-large"> </i>
+        <% end %>
 			</p>
 		</div>
 		<!--END CAPTION -->
@@ -353,15 +299,36 @@ This template build on DevKit http://www.bootstraptor.com
 
 <!-- ITEM -->
  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+  <div class="thumbnail">
+        <!-- IMAGE CONTAINER-->
+        <img src="http://www.biomasspackaging.com/Products/331-01975A-Kitchen-Roll-Towel.jpg" alt="">
+    <!--END IMAGE CONTAINER-->
+    <!-- CAPTION -->
+    <div class="caption">
+      <h4 class="text-center">ENTER A SUPPLY</h4>
+      <p>
+      <a class="btn btn-block btn-success" href="#">
+      <i class="icon-link icon-large"></i>
+      </a>
+      </p>
+    </div>
+    <!--END CAPTION -->
+  </div>
+<!-- END: THUMBNAIL -->
+</div>
+<!-- END ITEM -->
+
+<!-- ITEM -->
+ <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	<div class="thumbnail">
         <!-- IMAGE CONTAINER-->
-        <img src="http://lorempixel.com/260/195/technics/1" alt="">
+        <img src="http://revolutionarypaideia.files.wordpress.com/2011/02/black-teacher-man.jpg" alt="">
 		<!--END IMAGE CONTAINER-->
 		<!-- CAPTION -->
 		<div class="caption">
-			<h4 class="text-center">PROJECT TITLE</h4>
+			<h4 class="text-center">ADD AN EMPLOYEE</h4>
 			<a class="btn btn-block btn-success" href="#">
-			<i class="icon-link icon-large"></i> Read more
+			<i class="icon-link icon-large"></i>
 			</a>
 			<p></p>
 		</div>
@@ -375,14 +342,14 @@ This template build on DevKit http://www.bootstraptor.com
  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	<div class="thumbnail">
         <!-- IMAGE CONTAINER-->
-        <img src="http://lorempixel.com/260/195/technics/1" alt="">
+        <img src="http://www.readcwbooks.com/books.jpg" alt="">
 		<!--END IMAGE CONTAINER-->
 		<!-- CAPTION -->
 		<div class="caption">
-			<h4 class="text-center">PROJECT TITLE</h4>
+			<h4 class="text-center">ENTER A RESOURCE</h4>
 			<p>
 			<a class="btn btn-block btn-success" href="#">
-			<i class="icon-link icon-large"></i> Read more
+			<i class="icon-link icon-large"></i>
 			</a>
 			</p>
 		</div>
@@ -392,26 +359,7 @@ This template build on DevKit http://www.bootstraptor.com
 </div>
 <!-- END ITEM -->
 
-<!-- ITEM -->
- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-	<div class="thumbnail">
-        <!-- IMAGE CONTAINER-->
-        <img src="http://lorempixel.com/260/195/technics/1" alt="">
-		<!--END IMAGE CONTAINER-->
-		<!-- CAPTION -->
-		<div class="caption">
-			<h4 class="text-center">PROJECT TITLE</h4>
-			<p>
-			<a class="btn btn-block btn-success" href="#">
-			<i class="icon-link icon-large"></i> Read more
-			</a>
-			</p>
-		</div>
-		<!--END CAPTION -->
-	</div>
-<!-- END: THUMBNAIL -->
-</div>
-<!-- END ITEM -->
+
 
 </div>
  <!-- related projects -->
@@ -457,19 +405,22 @@ This template build on DevKit http://www.bootstraptor.com
     </div>
 
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <h4 class="line3 center standart-h4title"><span>Our office</span></h4>
+        <h4 class="line3 center standart-h4title"><span>Project Group Members</span></h4>
 		<address>
-			<strong>bootstraptor.com, LLC.</strong><br>
-			<i class="icon-map-marker"></i> 795 Folsom Ave, Suite 600<br>
-			San Francisco, CA 94107<br>
-			<i class="icon-phone-sign"></i> + 4 (123) 456-7890
+
+			<i class="icon-map-marker"></i> Scott Copeland<br>
+      <i class="icon-map-marker"></i>
+			Sagar Raina<br>
+      <i class="icon-map-marker"></i> Neekoo Torkian<br>
+      <i class="icon-map-marker"></i> Minshik Kang<br>
+      <i class="icon-map-marker"></i> Farzad Aziz
 
 		</address>
     </div>
 
 </div>
 	<hr>
-        <p>© bootstraptor.com Company 2013</p>
+        <p>COSC 578 Database Final Project</p>
   </div><!-- CONTAINER FOOTER-->
 
 </footer>
