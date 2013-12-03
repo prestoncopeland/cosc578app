@@ -30,7 +30,7 @@
   </div>
   <div class="container">
     <%= f.label :birthdate %><br>
-    <%= f.datetime_select :birthdate %>
+    <%= f.date_select :birthdate, :start_year => 1989 %>
   </div>
   <div class="container">
     <%= f.label :grade %><br>
@@ -61,8 +61,8 @@
     <%= f.text_field :phone %>
   </div>
   <div class="container">
-    <%= f.label :is_active? %><br>
-    <%= f.check_box :is_active? %>
+    <%= f.label :is_active %><br>
+    <%= f.check_box :is_active %>
   </div>
   <div class="container">
     <%= f.label :program_goals %><br>

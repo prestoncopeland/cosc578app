@@ -1,5 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :uppercase_type, only: [:edit, :create]
+
 
   # GET /employees
   # GET /employees.json
@@ -66,6 +68,11 @@ class EmployeesController < ApplicationController
     def set_employee
       @employee = Employee.find(params[:id])
     end
+
+     def uppercase_type
+      employee_params[:type].capitalize!
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params

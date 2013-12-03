@@ -15,6 +15,7 @@ class DailyDataController < ApplicationController
   # GET /daily_data/new
   def new
     @daily_datum = DailyDatum.new
+    @payment = Payment.new
   end
 
   # GET /daily_data/1/edit
@@ -25,6 +26,7 @@ class DailyDataController < ApplicationController
   # POST /daily_data.json
   def create
     @daily_datum = DailyDatum.new(daily_datum_params)
+
 
     respond_to do |format|
       if @daily_datum.save
