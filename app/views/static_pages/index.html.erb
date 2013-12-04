@@ -230,7 +230,7 @@ This template build on DevKit http://www.bootstraptor.com
 			<div class="well">
           <h4 class="text-center"><i class="icon-fullscreen"></i> DAILY DATA</h4>
 				<p>Enter the details of a payment transaction for a student. </p>
-				<p><%= link_to 'Daily Data', new_daily_datum_path, class: "btn btn-default" %>
+				<p><%= link_to 'Daily Data', new_daily_data_form_presenter_path, class: "btn btn-default" %>
 				</p>
 		  </div>
         </div>
@@ -362,10 +362,10 @@ This template build on DevKit http://www.bootstraptor.com
 		<div class="caption">
 			<h4 class="text-center">ENTER A RESOURCE</h4>
 			<p>
-			<a class="btn btn-block btn-primary" href="#">
-			<i class="icon-link icon-large"></i>
-			</a>
-			</p>
+      <%= link_to(new_resource_path, :class => 'btn btn-block btn-primary') do %>
+        <i class="icon-link icon-large"> </i>
+        <% end %>
+      </p>
 		</div>
 		<!--END CAPTION -->
 	</div>

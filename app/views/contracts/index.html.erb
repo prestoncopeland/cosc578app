@@ -1,4 +1,4 @@
-<h1>Listing contracts</h1>
+<h1 class="container">Listing Contracts</h1>
 
 <table>
   <thead>
@@ -10,10 +10,10 @@
       <th>Hours</th>
       <th>Amount paid</th>
       <th>Paid hours</th>
-      <th>Used hours</th>
+       <th>Used hours</th>
       <th>Remaining hours</th>
       <th>New or renew</th>
-      <th>Dt date</th>
+   <!--  <th>Dt date</th>
       <th>Dc date</th>
       <th>Dt amount</th>
       <th>Est class schedule</th>
@@ -21,12 +21,12 @@
       <th>Chart rate</th>
       <th>Tuition</th>
       <th>Dsc</th>
-      <th>Program explanation</th>
+      <th>Program explanation</th> -->
       <th>Total money</th>
       <th>Student</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>       </th>
+      <th>       </th>
+      <th>       </th>
     </tr>
   </thead>
 
@@ -43,7 +43,7 @@
         <td><%= contract.used_hours %></td>
         <td><%= contract.remaining_hours %></td>
         <td><%= contract.new_or_renew %></td>
-        <td><%= contract.dt_date %></td>
+      <!--  <td><%= contract.dt_date %></td>
         <td><%= contract.dc_date %></td>
         <td><%= contract.dt_amount %></td>
         <td><%= contract.est_class_schedule %></td>
@@ -51,9 +51,10 @@
         <td><%= contract.chart_rate %></td>
         <td><%= contract.tuition %></td>
         <td><%= contract.dsc %></td>
-        <td><%= contract.program_explanation %></td>
+        <td><%= contract.program_explanation %></td> -->
         <td><%= contract.total_money %></td>
-        <td><%= contract.student %></td>
+        <td><%= contract.student.first_name %>
+            <%= contract.student.last_name %></td>
         <td><%= link_to 'Show', contract %></td>
         <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
         <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -64,4 +65,4 @@
 
 <br>
 
-<%= link_to 'New Contract', new_contract_path %>
+<%= link_to 'New Contract', contracts_find_student_path %>

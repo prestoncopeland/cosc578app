@@ -102,8 +102,8 @@
 
 <p>
   <strong>Student:</strong>
-  <%= @contract.student %>
+  <%= @contract.student.first_name%> <%= @contract.student.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_contract_path(@contract) %> |
-<%= link_to 'Back', contracts_path %>
+<%= link_to 'List Contracts', contracts_path %>

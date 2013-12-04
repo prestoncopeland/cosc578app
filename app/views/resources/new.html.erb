@@ -1,5 +1,19 @@
-<h1>New resource</h1>
-
+<h1 class = "container">New Resource</h1>
+<div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 <%= render 'form' %>
 
-<%= link_to 'Back', resources_path %>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="thumbnail">
+        <!-- IMAGE CONTAINER-->
+        <img src="http://www.readcwbooks.com/books.jpg" alt="">
+        <div style= "text-align:center;">
+        <%= link_to 'List Resources', resources_path, :class => 'container btn btn-primary'%>
+        </div>
+      </div>
+
+</div>
+</div>
+

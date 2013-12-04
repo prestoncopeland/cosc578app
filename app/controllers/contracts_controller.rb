@@ -24,7 +24,8 @@ class ContractsController < ApplicationController
   # POST /contracts
   # POST /contracts.json
   def create
-    @contract = Contract.new(contract_params)
+    @student = Student.find_by(params[:student_id])
+    @contract = @student.contracts.build(contract_params)
 
     respond_to do |format|
       if @contract.save
@@ -59,6 +60,13 @@ class ContractsController < ApplicationController
       format.html { redirect_to contracts_url }
       format.json { head :no_content }
     end
+  end
+
+  def find_student
+  end
+
+  def select_student
+    @students = Student.search_by_full_name(params[:first], params[:last])
   end
 
   private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203030700) do
+ActiveRecord::Schema.define(version: 20131203083016) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -61,13 +61,13 @@ ActiveRecord::Schema.define(version: 20131203030700) do
     t.string   "student_action"
     t.text     "notes"
     t.string   "target"
-    t.boolean  "successful?"
+    t.boolean  "successful"
     t.integer  "employee_id"
     t.integer  "student_id"
     t.integer  "payment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "date"
+    t.date     "date"
   end
 
   add_index "daily_data", ["employee_id"], name: "index_daily_data_on_employee_id"
@@ -147,8 +147,8 @@ ActiveRecord::Schema.define(version: 20131203030700) do
   create_table "payments", force: true do |t|
     t.decimal  "amount"
     t.boolean  "partial_payment"
-    t.datetime "date"
-    t.string   "type"
+    t.date     "date"
+    t.string   "payment_type"
     t.integer  "paymentable_id"
     t.string   "paymentable_type"
     t.datetime "created_at"
@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(version: 20131203030700) do
     t.string   "subject"
     t.integer  "pages"
     t.integer  "publication_year"
-    t.datetime "purchase_date"
+    t.date     "purchase_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

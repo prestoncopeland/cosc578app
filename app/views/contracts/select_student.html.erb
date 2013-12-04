@@ -1,0 +1,12 @@
+<h3>Select A Student For The Contract</h3>
+
+<ul>
+        <% @students.each do |student| %>
+              <li><%= student.first_name%>  <%= student.last_name %> <%= link_to "select", new_contract_path,
+              :student_id => student.id , :class => 'btn btn-mini' %></li>
+
+        <% end %>
+</ul>
+
+<%= link_to 'Search again', students_search_path, :class => 'container btn btn-primary'%>
+

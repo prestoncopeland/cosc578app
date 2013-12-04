@@ -1,15 +1,15 @@
-<h1>Listing employees</h1>
+<h1>Listing Employees</h1>
 
 <table>
   <thead>
     <tr>
       <th>First name</th>
-      <th>Middle name</th>
+    <!--  <th>Middle name</th> -->
       <th>Last name</th>
-      <th>Nickname</th>
+   <!--   <th>Nickname</th> -->
       <th>Birthdate</th>
       <th>Ssn</th>
-      <th>Ethnicity</th>
+  <!--    <th>Ethnicity</th> -->
       <th>Interview date</th>
       <th>Street</th>
       <th>City</th>
@@ -18,7 +18,7 @@
       <th>Home phone</th>
       <th>Cell phone</th>
       <th>Email</th>
-      <th>Career goals</th>
+  <!--    <th>Career goals</th> -->
       <th>Type</th>
       <th></th>
       <th></th>
@@ -30,12 +30,12 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.first_name %></td>
-        <td><%= employee.middle_name %></td>
+    <!--    <td><%= employee.middle_name %></td> -->
         <td><%= employee.last_name %></td>
-        <td><%= employee.nickname %></td>
+    <!--    <td><%= employee.nickname %></td> -->
         <td><%= employee.birthdate %></td>
         <td><%= employee.ssn %></td>
-        <td><%= employee.ethnicity %></td>
+    <!--    <td><%= employee.ethnicity %></td> -->
         <td><%= employee.interview_date %></td>
         <td><%= employee.street %></td>
         <td><%= employee.city %></td>
@@ -44,7 +44,7 @@
         <td><%= employee.home_phone %></td>
         <td><%= employee.cell_phone %></td>
         <td><%= employee.email %></td>
-        <td><%= employee.career_goals %></td>
+     <!--   <td><%= employee.career_goals %></td> -->
         <td><%= employee.type %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>

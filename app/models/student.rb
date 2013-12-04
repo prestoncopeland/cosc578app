@@ -1,4 +1,9 @@
 class Student < ActiveRecord::Base
+
+  def self.search_by_full_name(first, last)
+    Student.where("first_name LIKE ? OR last_name LIKE ? OR first_name LIKE ? OR last_name LIKE ?", first, last, last, first)
+  end
+
   has_many :books
 
 

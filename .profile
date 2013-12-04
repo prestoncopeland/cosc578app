@@ -1,0 +1,1 @@
+export PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.5.3/bin:/Users/prestoncopeland/Library/cakephp/app/console:$PATH

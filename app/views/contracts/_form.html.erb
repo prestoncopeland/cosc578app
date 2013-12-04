@@ -11,91 +11,91 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :date %><br>
     <%= f.datetime_select :date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :enrollment_date %><br>
     <%= f.datetime_select :enrollment_date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :final_class_date %><br>
     <%= f.datetime_select :final_class_date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :final_interim_test %><br>
     <%= f.datetime_select :final_interim_test %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :hours %><br>
     <%= f.text_field :hours %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :amount_paid %><br>
     <%= f.text_field :amount_paid %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :paid_hours %><br>
     <%= f.text_field :paid_hours %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :used_hours %><br>
     <%= f.text_field :used_hours %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :remaining_hours %><br>
     <%= f.text_field :remaining_hours %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :new_or_renew %><br>
     <%= f.check_box :new_or_renew %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :dt_date %><br>
     <%= f.datetime_select :dt_date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :dc_date %><br>
     <%= f.datetime_select :dc_date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :dt_amount %><br>
     <%= f.text_field :dt_amount %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :est_class_schedule %><br>
     <%= f.text_field :est_class_schedule %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :hrs_per_week %><br>
     <%= f.text_field :hrs_per_week %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :chart_rate %><br>
     <%= f.text_field :chart_rate %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :tuition %><br>
     <%= f.text_field :tuition %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :dsc %><br>
     <%= f.text_field :dsc %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :program_explanation %><br>
     <%= f.text_area :program_explanation %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :total_money %><br>
     <%= f.text_field :total_money %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :student %><br>
     <%= f.text_field :student %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div> -->
+  <div class="container">
+    <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>

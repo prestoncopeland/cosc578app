@@ -61,6 +61,15 @@ class StudentsController < ApplicationController
     end
   end
 
+  def search
+  end
+
+  def search_results
+    @students = Student.search_by_full_name(params[:first], params[:last])
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student

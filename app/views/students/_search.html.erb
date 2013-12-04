@@ -1,0 +1,9 @@
+<%= form_tag :controller => 'students', :action => 'search_results', :method => 'get' do %>
+
+      <%= text_field_tag :first, params[:first], :id => 'search_field_1' %>
+      <%= text_field_tag :last, params[:last], :id => 'search_field_2' %>
+      <%= submit_tag "Search", :class => 'container btn btn-primary', :name => nil %>
+
+     <!-- <%= link_to_function "Clear", "$('search_field_1').clear()" %>
+      <%= link_to_function "Clear", "$('search_field_2').clear()" %> -->
+  <% end %>

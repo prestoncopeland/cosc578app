@@ -3,6 +3,15 @@ Cosc578app::Application.routes.draw do
   root 'static_pages#index'
 
   get 'static_pages/about' => 'static_pages#about'
+
+  get 'students/search' => 'students#search'
+  post 'students/search' => 'students#search_results'
+
+  get 'contracts/find_student' => 'contracts#find_student'
+  post 'contracts/select_student' => 'contracts#select_student'
+
+  resources :daily_data_form_presenters
+
   resources :suppliers
 
   resources :supplies
