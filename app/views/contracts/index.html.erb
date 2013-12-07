@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Nickname</th>
       <th>Student</th>
       <th>Date</th>
       <th>Enrollment date</th>
@@ -33,6 +34,7 @@
   <tbody>
     <% @contracts.each do |contract| %>
       <tr>
+        <td><%= contract.student.nickname %></td>
         <td><%= contract.student.first_name %>
             <%= contract.student.last_name %></td>
         <td><%= contract.date %></td>
@@ -65,4 +67,4 @@
 
 <br>
 
-<%= link_to 'New Contract', contracts_find_student_path %>
+<%= link_to 'New Contract', contracts_find_student_path, class: "btn btn-primary" %>

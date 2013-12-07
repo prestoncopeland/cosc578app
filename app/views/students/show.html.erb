@@ -1,3 +1,5 @@
+<div class = "container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -74,5 +76,12 @@
   <%= @student.program_goals %>
 </p>
 
+<p>
+  <strong>Hours remaining?:</strong>
+  <%= @student.hours_remaining? %>
+</p>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'List Students', students_path %>
+
+</div>

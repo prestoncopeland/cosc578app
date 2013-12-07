@@ -1,3 +1,4 @@
+<div class = "container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -21,7 +22,7 @@
 </p>
 
 <p>
-  <strong>Work Session?:</strong>
+  <strong>Not A Work Session?:</strong>
   <%= @session.not_work_session %>
 </p>
 
@@ -36,4 +37,6 @@
 </p>
 
 <%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+<%= link_to 'List Sessions', sessions_path %>
+
+</div>

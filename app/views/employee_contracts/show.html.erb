@@ -1,3 +1,5 @@
+<div class = "container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,7 +14,7 @@
 
 <p>
   <strong>Employee:</strong>
-  <%= @employee_contract.employee %>
+  <%= @employee.first_name %>
 </p>
 
 <p>
@@ -21,9 +23,11 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @employee_contract.type %>
+  <strong>Category:</strong>
+  <%= @employee_contract.category %>
 </p>
 
 <%= link_to 'Edit', edit_employee_contract_path(@employee_contract) %> |
-<%= link_to 'Back', employee_contracts_path %>
+<%= link_to 'List Employee Contracts', employee_contracts_path %>
+
+</div>

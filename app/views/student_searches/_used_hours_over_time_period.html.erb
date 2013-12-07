@@ -1,0 +1,17 @@
+<%= form_tag({ :controller => 'student_searches', :action => 'used_hours_over_time_period'}, :method => 'post', class: "container") do %>
+      <h4>Display total hours used by a student over the time period specified</h4>
+      <%= label_tag(:nickname, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname, params[:nickname], :id => 'search_field_1' %>
+      <br/>
+      <%= label_tag(:start_date, "Enter the starting date") %>
+      <br/>
+      <%= select_date Date.today, prefix: :start_date %>
+      <br/>
+       <%= label_tag(:end_date, "Enter the ending date") %>
+       <br/>
+      <%= select_date Date.today, prefix: :end_date %>
+
+      <%= submit_tag "Search", :class => 'container btn btn-primary', :name => nil %>
+
+  <% end %>

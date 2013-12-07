@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :start_date %><br>
-    <%= f.datetime_select :start_date %>
+    <%= f.date_select :start_date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :contract_date %><br>
-    <%= f.datetime_select :contract_date %>
+    <%= f.date_select :contract_date %>
   </div>
-  <div class="field">
-    <%= f.label :employee %><br>
-    <%= f.text_field :employee %>
+  <div class="container">
+    <%= f.label :employee_id %><br>
+    <%= f.select :employee_id, options_for_select(@employees) %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :pay_rate %><br>
     <%= f.text_field :pay_rate %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+  <div class="container">
+    <%= f.label :category  %><br>
+    <%= f.select :category, options_for_select(%w[Tutor Staff Director]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <br/>
+  <div class="container">
+    <%= f.submit "Create Employee Contract", class: "btn btn-primary" %>
   </div>
 <% end %>

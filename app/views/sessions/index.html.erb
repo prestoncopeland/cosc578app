@@ -1,4 +1,5 @@
-<h1>Listing sessions</h1>
+<div class = "container">
+<h1>Listing Sessions</h1>
 
 <table>
   <thead>
@@ -25,7 +26,7 @@
         <td><%= session.start_time %></td>
         <td><%= session.end_time %></td>
         <td><%= session.not_work_session %></td>
-        <td><%= student.first_name %></td>
+        <td><%= student.nickname %></td>
         <td><%= tutor.first_name %></td>
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>
@@ -37,4 +38,6 @@
 
 <br>
 
-<%= link_to 'New Session', new_session_path %>
+<%= link_to 'New Session', new_session_path, class: "btn btn-primary" %>
+
+</div>

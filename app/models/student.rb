@@ -8,6 +8,10 @@ class Student < ActiveRecord::Base
     Student.where("nickname LIKE ?", nickname).first
   end
 
+  def hours_remaining?
+    return(contract.remaining_hours > 0)
+  end
+
   has_many :books
 
   has_many :guardians, through: :guardians_students
@@ -21,9 +25,8 @@ class Student < ActiveRecord::Base
 
   has_one :contract
 
-  has_many :payments, through: :contracts
+  has_many :daily_data_payments, through: :contracts
 
-  has_many :daily_data
 
    has_many :student_hour_transfers_as_student_to, :class_name => 'StudentHourTransfer', :foreign_key => 'student_to_id'
   has_many :student_hour_transfers_as_student_from, :class_name => 'StudentHourTransfer', :foreign_key => 'student_from_id'

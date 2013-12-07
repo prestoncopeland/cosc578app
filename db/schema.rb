@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206210020) do
+ActiveRecord::Schema.define(version: 20131207061344) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -21,18 +21,18 @@ ActiveRecord::Schema.define(version: 20131206210020) do
   end
 
   create_table "contracts", force: true do |t|
-    t.datetime "date"
-    t.datetime "enrollment_date"
-    t.datetime "final_class_date"
-    t.datetime "final_interim_test"
+    t.date     "date"
+    t.date     "enrollment_date"
+    t.date     "final_class_date"
+    t.date     "final_interim_test"
     t.decimal  "hours"
     t.decimal  "amount_paid"
     t.decimal  "paid_hours"
     t.decimal  "used_hours"
     t.decimal  "remaining_hours"
     t.boolean  "new_or_renew"
-    t.datetime "dt_date"
-    t.datetime "dc_date"
+    t.date     "dt_date"
+    t.date     "dc_date"
     t.decimal  "dt_amount"
     t.string   "est_class_schedule"
     t.decimal  "hrs_per_week"
@@ -72,13 +72,13 @@ ActiveRecord::Schema.define(version: 20131206210020) do
   end
 
   create_table "employee_contracts", force: true do |t|
-    t.datetime "start_date"
-    t.datetime "contract_date"
+    t.date     "start_date"
+    t.date     "contract_date"
     t.integer  "employee_id"
     t.decimal  "pay_rate"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
   add_index "employee_contracts", ["employee_id"], name: "index_employee_contracts_on_employee_id"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20131206210020) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "job_category"
+    t.boolean  "is_active"
   end
 
   create_table "guardians", force: true do |t|
@@ -174,8 +175,8 @@ ActiveRecord::Schema.define(version: 20131206210020) do
     t.integer  "tutor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.boolean  "not_work_session"
   end
 

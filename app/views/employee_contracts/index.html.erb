@@ -1,4 +1,5 @@
-<h1>Listing employee_contracts</h1>
+<div class = "container">
+<h1>Employee Contracts</h1>
 
 <table>
   <thead>
@@ -7,7 +8,7 @@
       <th>Contract date</th>
       <th>Employee</th>
       <th>Pay rate</th>
-      <th>Type</th>
+      <th>Category</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,9 +20,9 @@
       <tr>
         <td><%= employee_contract.start_date %></td>
         <td><%= employee_contract.contract_date %></td>
-        <td><%= employee_contract.employee %></td>
+        <td><%= employee_contract.employee.first_name %></td>
         <td><%= employee_contract.pay_rate %></td>
-        <td><%= employee_contract.type %></td>
+        <td><%= employee_contract.category %></td>
         <td><%= link_to 'Show', employee_contract %></td>
         <td><%= link_to 'Edit', edit_employee_contract_path(employee_contract) %></td>
         <td><%= link_to 'Destroy', employee_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Employee contract', new_employee_contract_path %>
+<%= link_to 'New Employee Contract', new_employee_contract_path, class: "btn btn-primary"%>
+
+</div>

@@ -1,8 +1,15 @@
-<h1>Student Hour Transfers</h1>
 
+<div class="row">
+
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4"> </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <h1>Student Hour Transfers</h1>
 <table>
   <thead>
     <tr>
+      <th>Date transferred</th>
       <th>Hours transferred</th>
       <th>Student from</th>
        <th>Student to</th>
@@ -15,6 +22,7 @@
   <tbody>
     <% @student_hour_transfers.each do |student_hour_transfer| %>
       <tr>
+        <td><%= student_hour_transfer.created_at.to_date %> </td>
         <td><%= student_hour_transfer.hours_transferred %></td>
         <td><%= (Student.find(student_hour_transfer.student_from_id)).nickname %></td>
          <td><%= (Student.find(student_hour_transfer.student_to_id)).nickname %></td>
@@ -28,4 +36,8 @@
 
 <br>
 
-<%= link_to 'New Student hour transfer', new_student_hour_transfer_path %>
+<%= link_to 'New Student Hour Transfer', new_student_hour_transfer_path, class: "btn btn-primary" %>
+
+</div>
+
+</div>
