@@ -4,6 +4,9 @@ Cosc578app::Application.routes.draw do
 
   root 'static_pages#index'
 
+  get 'student_searches' => 'student_searches#index'
+  post 'student_searches/remaining_hours' => 'student_searches#remaining_hours'
+
   get 'static_pages/about' => 'static_pages#about'
 
   get 'students/search' => 'students#search'

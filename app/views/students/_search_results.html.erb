@@ -1,27 +1,27 @@
-<table class="container table table-bordered ">
+<table>
   <thead>
     <tr>
       <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Nickname</th>
+      <th>First name</th>
+      <th>Last name</th>
       <th>Grade</th>
       <th>Ethnicity</th>
       <th>Contract ID</th>
-      <th>Contract Date</th>
+      <th>Contract date</th>
     </tr>
   </thead>
 <tbody>
     <% @students.each do |student| %>
       <tr>
         <td><%= student.id %></td>
+        <td><%= student.nickname %></td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.grade %></td>
         <td><%= student.ethnicity %></td>
-        <td><% student.contracts.each do |contract| %>
-          <%= contract.id %></td>
-        <td><%= contract.date %> </td>
-        <% end %>
+        <td><%= student.contract.id %> </td>
+        <td><%= student.contract.date %></td>
       </tr>
     <% end %>
 </tbody>

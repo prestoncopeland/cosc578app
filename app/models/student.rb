@@ -4,6 +4,10 @@ class Student < ActiveRecord::Base
     Student.where("first_name LIKE ? OR last_name LIKE ? OR first_name LIKE ? OR last_name LIKE ?", first, last, last, first)
   end
 
+  def self.search_by_nickname(nickname)
+    Student.where("nickname LIKE ?", nickname).first
+  end
+
   has_many :books
 
   has_many :guardians, through: :guardians_students

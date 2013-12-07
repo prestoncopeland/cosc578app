@@ -1,0 +1,7 @@
+<%= form_tag :controller => 'student_searches', :action => 'remaining_hours', :method => 'get' do %>
+
+      <%= text_field_tag :nickname, params[:nickname], :id => 'search_field_1' %>
+
+      <%= submit_tag "Search", :class => 'container btn btn-primary', :name => nil %>
+
+  <% end %>
