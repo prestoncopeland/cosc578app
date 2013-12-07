@@ -1,3 +1,14 @@
+<%= form_tag({controller: "student_hour_transfers", action: "create"}, method: "post", class: "container") do %>
+  <%= select_tag(:student_from_id, options_for_select(@students_from)) %>
+  <%= select_tag(:student_to_id, options_for_select(@students_to)) %>
+  <%= label_tag(:hours_transferred, "Hours") %>
+  <%= text_field(:student_hour_transfer, :hours_transferred) %>
+  <%= submit_tag("Transfer Hours") %>
+<% end %>
+
+
+
+<!--
 <%= form_for(@student_hour_transfer) do |f| %>
   <% if @student_hour_transfer.errors.any? %>
     <div id="error_explanation">
@@ -23,3 +34,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+-->

@@ -15,6 +15,8 @@ class StudentHourTransfersController < ApplicationController
   # GET /student_hour_transfers/new
   def new
     @student_hour_transfer = StudentHourTransfer.new
+    @students_from = Student.pluck(:nickname, :id)
+    @students_to = Student.pluck(:nickname, :id)
   end
 
   # GET /student_hour_transfers/1/edit
@@ -24,10 +26,12 @@ class StudentHourTransfersController < ApplicationController
   # POST /student_hour_transfers
   # POST /student_hour_transfers.json
   def create
-    @student_hour_transfer = StudentHourTransfer.new(student_hour_transfer_params)
-
+    @student_hour_transfer = StudentHourTransfer.new(:student_from_id => params[:student_from_id], :student_to_id => params[:student_to_id], :hours_transferred => params[:student_hour_transfer][:hours_transferred])
+    @student_hour_transfer.update_contracts(params[:student_to_id], params[:student_from_id], params[:student_hour_transfer][:hours_transferred].to_i)
     respond_to do |format|
       if @student_hour_transfer.save
+
+
         format.html { redirect_to @student_hour_transfer, notice: 'Student hour transfer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @student_hour_transfer }
       else
@@ -69,6 +73,6 @@ class StudentHourTransfersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_hour_transfer_params
-      params.require(:student_hour_transfer).permit(:hours_transferred, :employee_id)
+      params.require(:student_hour_transfer).permit(:hours_transferred, :student_from_id, :student_to_id)
     end
 end

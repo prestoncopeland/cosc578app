@@ -11,18 +11,28 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @session.type %>
+  <strong>Start Time:</strong>
+  <%= @session.start_time %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @session.end_time %>
+</p>
+
+<p>
+  <strong>Work Session?:</strong>
+  <%= @session.not_work_session %>
 </p>
 
 <p>
   <strong>Student:</strong>
-  <%= @session.student %>
+  <%= Student.find(@session.student_id).first_name %>
 </p>
 
 <p>
   <strong>Tutor:</strong>
-  <%= @session.tutor %>
+  <%= Employee.find(@session.tutor_id).first_name %>
 </p>
 
 <%= link_to 'Edit', edit_session_path(@session) %> |

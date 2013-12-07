@@ -1,0 +1,64 @@
+<%= form_for(@daily_data_payment) do |f| %>
+  <% if @daily_data_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_data_payment.errors.count, "error") %> prohibited this daily_data_payment from being saved:</h2>
+
+      <ul>
+      <% @daily_data_payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="container">
+    <%= f.label :daily_data_paymentable_type, 'Daily data type (Contract, Resource, Book)' %><br>
+    <%= f.text_field :daily_data_paymentable_type %>
+  </div>
+  <div class="container">
+    <%= f.label :daily_data_paymentable_id, 'ID (contract, resource, book)' %><br>
+    <%= f.number_field :daily_data_paymentable_id %>
+  </div>
+  <div class="container">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="container">
+    <%= f.label :payment_type %><br>
+    <%= f.text_field :payment_type %>
+  </div>
+  <div class="container">
+    <%= f.label :partial_payment, 'Partial payment(check for yes)' %><br>
+    <%= f.check_box :partial_payment %>
+  </div>
+  <div class="container">
+    <%= f.label :referral_source %><br>
+    <%= f.text_field :referral_source %>
+  </div>
+  <div class="container">
+    <%= f.label :student_action %><br>
+    <%= f.text_field :student_action %>
+  </div>
+  <div class="container">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="container">
+    <%= f.label :rate %><br>
+    <%= f.text_field :rate %>
+  </div>
+  <div class="container">
+    <%= f.label :hours %><br>
+    <%= f.text_field :hours %>
+  </div>
+  <div class="container">
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
+</br></br>
+
+

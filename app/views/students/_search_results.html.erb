@@ -1,7 +1,34 @@
-<ul>
-        <% @students.each do |student| %>
-              <li><%= student.first_name%>  <%= student.last_name %></li>
+<table class="container table table-bordered ">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Grade</th>
+      <th>Ethnicity</th>
+      <th>Contract ID</th>
+      <th>Contract Date</th>
+    </tr>
+  </thead>
+<tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.grade %></td>
+        <td><%= student.ethnicity %></td>
+        <td><% student.contracts.each do |contract| %>
+          <%= contract.id %></td>
+        <td><%= contract.date %> </td>
         <% end %>
-</ul>
+      </tr>
+    <% end %>
+</tbody>
+</table>
 
-<%= link_to 'Search again', students_search_path, :class => 'container btn btn-primary'%>
+
+<%= link_to 'Search again', students_search_path, :class => 'container centerize btn btn-primary'%>
+
+
+

@@ -1,0 +1,1 @@
+json.extract! @daily_data_payment, :id, :date, :daily_data_paymentable_type, :daily_data_paymentable_id, :amount, :payment_type, :partial_payment, :referral_source, :student_action, :notes, :rate, :hours, :created_at, :updated_at

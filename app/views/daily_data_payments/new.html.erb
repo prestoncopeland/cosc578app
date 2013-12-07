@@ -1,0 +1,17 @@
+<h1 class="container">New Daily Data</h1>
+
+<h4 class ="container">To enter the daily data for a ...
+<ul>
+  <li>student payment, <%= link_to "find the student's contract ID", students_search_path %>
+    </li>
+    <li>resource purchase, find the resource's ID:
+    </li>
+    <li>book purchase by a student, find the book's ID:
+    </li>
+  </ul>
+</h4>
+
+<%= render 'form' %>
+
+<%= link_to 'List Daily Data', daily_data_payments_path, :class => 'container btn btn-primary'%>
+

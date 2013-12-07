@@ -24,8 +24,8 @@ class ContractsController < ApplicationController
   # POST /contracts
   # POST /contracts.json
   def create
-    @student = Student.find_by(params[:student_id])
-    @contract = @student.contracts.build(contract_params)
+    @contract = Contract.new(contract_params)
+    @student = Student.find(@contract.student_id)
 
     respond_to do |format|
       if @contract.save

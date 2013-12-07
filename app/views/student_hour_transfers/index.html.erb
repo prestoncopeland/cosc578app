@@ -1,10 +1,11 @@
-<h1>Student_hour_transfers</h1>
+<h1>Student Hour Transfers</h1>
 
 <table>
   <thead>
     <tr>
       <th>Hours transferred</th>
-      <th>Employee</th>
+      <th>Student from</th>
+       <th>Student to</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,7 +16,8 @@
     <% @student_hour_transfers.each do |student_hour_transfer| %>
       <tr>
         <td><%= student_hour_transfer.hours_transferred %></td>
-        <td><%= student_hour_transfer.employee %></td>
+        <td><%= (Student.find(student_hour_transfer.student_from_id)).nickname %></td>
+         <td><%= (Student.find(student_hour_transfer.student_to_id)).nickname %></td>
         <td><%= link_to 'Show', student_hour_transfer %></td>
         <td><%= link_to 'Edit', edit_student_hour_transfer_path(student_hour_transfer) %></td>
         <td><%= link_to 'Destroy', student_hour_transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203083016) do
+ActiveRecord::Schema.define(version: 20131206210020) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
@@ -55,24 +55,21 @@ ActiveRecord::Schema.define(version: 20131203083016) do
     t.datetime "updated_at"
   end
 
-  create_table "daily_data", force: true do |t|
-    t.string   "type"
+  create_table "daily_data_payments", force: true do |t|
+    t.date     "date"
+    t.string   "daily_data_paymentable_type"
+    t.integer  "daily_data_paymentable_id"
+    t.decimal  "amount"
+    t.string   "payment_type"
+    t.boolean  "partial_payment"
     t.string   "referral_source"
     t.string   "student_action"
     t.text     "notes"
-    t.string   "target"
-    t.boolean  "successful"
-    t.integer  "employee_id"
-    t.integer  "student_id"
-    t.integer  "payment_id"
+    t.decimal  "rate"
+    t.decimal  "hours"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "date"
   end
-
-  add_index "daily_data", ["employee_id"], name: "index_daily_data_on_employee_id"
-  add_index "daily_data", ["payment_id"], name: "index_daily_data_on_payment_id"
-  add_index "daily_data", ["student_id"], name: "index_daily_data_on_student_id"
 
   create_table "employee_contracts", force: true do |t|
     t.datetime "start_date"
@@ -144,17 +141,6 @@ ActiveRecord::Schema.define(version: 20131203083016) do
   add_index "meeting_participants", ["daily_datum_id"], name: "index_meeting_participants_on_daily_datum_id"
   add_index "meeting_participants", ["guardian_id"], name: "index_meeting_participants_on_guardian_id"
 
-  create_table "payments", force: true do |t|
-    t.decimal  "amount"
-    t.boolean  "partial_payment"
-    t.date     "date"
-    t.string   "payment_type"
-    t.integer  "paymentable_id"
-    t.string   "paymentable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "resources", force: true do |t|
     t.string   "title"
     t.string   "subject"
@@ -183,12 +169,14 @@ ActiveRecord::Schema.define(version: 20131203083016) do
 
   create_table "sessions", force: true do |t|
     t.decimal  "hours"
-    t.datetime "date"
-    t.string   "type"
+    t.date     "date"
     t.integer  "student_id"
     t.integer  "tutor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.boolean  "not_work_session"
   end
 
   add_index "sessions", ["student_id"], name: "index_sessions_on_student_id"
@@ -211,14 +199,11 @@ ActiveRecord::Schema.define(version: 20131203083016) do
 
   create_table "student_hour_transfers", force: true do |t|
     t.decimal  "hours_transferred"
-    t.integer  "employee_id"
     t.integer  "student_from_id"
     t.integer  "student_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "student_hour_transfers", ["employee_id"], name: "index_student_hour_transfers_on_employee_id"
 
   create_table "students", force: true do |t|
     t.string   "first_name"

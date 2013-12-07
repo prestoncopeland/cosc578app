@@ -1,4 +1,10 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
+<h1>Contract</h1>
+<p>
+  <strong>Student:</strong>
+  <%= @contract.student.first_name%> <%= @contract.student.last_name %>
+</p>
 
 <p>
   <strong>Date:</strong>
@@ -100,10 +106,9 @@
   <%= @contract.total_money %>
 </p>
 
-<p>
-  <strong>Student:</strong>
-  <%= @contract.student.first_name%> <%= @contract.student.last_name %>
-</p>
+
 
 <%= link_to 'Edit', edit_contract_path(@contract) %> |
 <%= link_to 'List Contracts', contracts_path %>
+
+</div>

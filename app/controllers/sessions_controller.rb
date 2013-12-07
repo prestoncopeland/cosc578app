@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+
   end
 
   # GET /sessions/1/edit
@@ -24,7 +25,9 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
+
     @session = Session.new(session_params)
+
 
     respond_to do |format|
       if @session.save
@@ -69,6 +72,6 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:hours, :date, :type, :student_id, :tutor_id)
+      params.require(:session).permit(:hours, :date, :type, :student_id, :tutor_id, :start_time, :end_time, :not_work_session)
     end
 end

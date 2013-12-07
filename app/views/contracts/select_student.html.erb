@@ -1,12 +1,29 @@
-<h3>Select A Student For The Contract</h3>
+<h3 class="container">Input the Desired Student's ID into the Contract</h3>
+<table class="container table table-bordered ">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Grade</th>
+      <th>Ethnicity</th>
+      <th>Select</th>
+    </tr>
+  </thead>
+<tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.grade %></td>
+        <td><%= student.ethnicity %></td>
+        <td><%= link_to "create contract", new_contract_path, :class => 'btn btn-mini' %></td>
+      </tr>
+    <% end %>
+</tbody>
+</table>
 
-<ul>
-        <% @students.each do |student| %>
-              <li><%= student.first_name%>  <%= student.last_name %> <%= link_to "select", new_contract_path,
-              :student_id => student.id , :class => 'btn btn-mini' %></li>
 
-        <% end %>
-</ul>
-
-<%= link_to 'Search again', students_search_path, :class => 'container btn btn-primary'%>
+<%= link_to 'Search again', contracts_find_student_path, :class => 'container centerize btn btn-primary'%>
 

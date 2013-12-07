@@ -1,5 +1,13 @@
-<h1>New student_hour_transfer</h1>
+<h1>New Student Hour Transfer</h1>
 
-<%= render 'form' %>
+<%= form_tag({controller: "student_hour_transfers", action: "create"}, method: "post", class: "container") do %>
+  <%= select_tag(:student_from_id, options_for_select(@students_from)) %>
+  <%= select_tag(:student_to_id, options_for_select(@students_to)) %>
+  <%= label_tag(:hours_transferred, "Hours") %>
+  <%= text_field(:student_hour_transfer, :hours_transferred) %>
+  <%= submit_tag("Transfer Hours") %>
+<% end %>
 
-<%= link_to 'Back', student_hour_transfers_path %>
+<!-- <%= render 'form' %> -->
+
+<%= link_to 'List Recent Transfers', student_hour_transfers_path %>

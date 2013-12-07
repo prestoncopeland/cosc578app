@@ -17,19 +17,27 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :start_time %><br>
+    <%= f.time_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :student %><br>
-    <%= f.text_field :student %>
+    <%= f.label :end_time %><br>
+    <%= f.time_select :end_time %>
   </div>
   <div class="field">
-    <%= f.label :tutor %><br>
-    <%= f.text_field :tutor %>
+    <%= f.label :not_work_session, 'Not a work session?' %><br>
+    <%= f.check_box :not_work_session %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %><br>
+    <%= f.text_field :student_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tutor_id %><br>
+    <%= f.text_field :tutor_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

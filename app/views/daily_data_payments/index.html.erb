@@ -1,0 +1,47 @@
+<h1>Daily Data Payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Daily data type</th>
+      <th>Daily data type ID</th>
+      <th>Amount</th>
+      <th>Payment type</th>
+      <th>Partial payment</th>
+      <th>Referral source</th>
+      <th>Student action</th>
+      <th>Notes</th>
+      <th>Rate</th>
+      <th>Hours</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daily_data_payments.each do |daily_data_payment| %>
+      <tr>
+        <td><%= daily_data_payment.date %></td>
+        <td><%= daily_data_payment.daily_data_paymentable_type %></td>
+        <td><%= daily_data_payment.daily_data_paymentable_id %></td>
+        <td><%= daily_data_payment.amount %></td>
+        <td><%= daily_data_payment.payment_type %></td>
+        <td><%= daily_data_payment.partial_payment %></td>
+        <td><%= daily_data_payment.referral_source %></td>
+        <td><%= daily_data_payment.student_action %></td>
+        <td><%= daily_data_payment.notes %></td>
+        <td><%= daily_data_payment.rate %></td>
+        <td><%= daily_data_payment.hours %></td>
+        <td><%= link_to 'Show', daily_data_payment %></td>
+        <td><%= link_to 'Edit', edit_daily_data_payment_path(daily_data_payment) %></td>
+        <td><%= link_to 'Destroy', daily_data_payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daily data payment', new_daily_data_payment_path %>

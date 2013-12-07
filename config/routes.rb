@@ -1,11 +1,16 @@
 Cosc578app::Application.routes.draw do
 
+  resources :daily_data_payments
+
   root 'static_pages#index'
 
   get 'static_pages/about' => 'static_pages#about'
 
   get 'students/search' => 'students#search'
   post 'students/search' => 'students#search_results'
+
+  get 'employees/search' => 'employees#search'
+  post 'employees/search' => 'employees#search_results'
 
   get 'contracts/find_student' => 'contracts#find_student'
   post 'contracts/select_student' => 'contracts#select_student'

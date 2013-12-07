@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Student</th>
       <th>Date</th>
       <th>Enrollment date</th>
       <th>Final class date</th>
@@ -23,7 +24,6 @@
       <th>Dsc</th>
       <th>Program explanation</th> -->
       <th>Total money</th>
-      <th>Student</th>
       <th>       </th>
       <th>       </th>
       <th>       </th>
@@ -33,6 +33,8 @@
   <tbody>
     <% @contracts.each do |contract| %>
       <tr>
+        <td><%= contract.student.first_name %>
+            <%= contract.student.last_name %></td>
         <td><%= contract.date %></td>
         <td><%= contract.enrollment_date %></td>
         <td><%= contract.final_class_date %></td>
@@ -53,8 +55,6 @@
         <td><%= contract.dsc %></td>
         <td><%= contract.program_explanation %></td> -->
         <td><%= contract.total_money %></td>
-        <td><%= contract.student.first_name %>
-            <%= contract.student.last_name %></td>
         <td><%= link_to 'Show', contract %></td>
         <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
         <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -5,7 +5,9 @@
     <tr>
       <th>Hours</th>
       <th>Date</th>
-      <th>Type</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Work Session?</th>
       <th>Student</th>
       <th>Tutor</th>
       <th></th>
@@ -16,12 +18,15 @@
 
   <tbody>
     <% @sessions.each do |session| %>
-      <tr>
+      <tr> <% student = Student.find(session.student_id) %>
+        <% tutor = Employee.find(session.tutor_id) %>
         <td><%= session.hours %></td>
         <td><%= session.date %></td>
-        <td><%= session.type %></td>
-        <td><%= session.student %></td>
-        <td><%= session.tutor %></td>
+        <td><%= session.start_time %></td>
+        <td><%= session.end_time %></td>
+        <td><%= session.not_work_session %></td>
+        <td><%= student.first_name %></td>
+        <td><%= tutor.first_name %></td>
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>
         <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>

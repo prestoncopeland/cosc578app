@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="container">
+    <%= f.label :student_id, 'Student ID' %><br>
+    <%= f.text_field :student_id %>
+  </div>
+  <div class="container">
     <%= f.label :date %><br>
     <%= f.datetime_select :date %>
   </div>
@@ -91,10 +95,6 @@
     <%= f.label :total_money %><br>
     <%= f.text_field :total_money %>
   </div>
-  <!--<div class="field">
-    <%= f.label :student %><br>
-    <%= f.text_field :student %>
-  </div> -->
   <div class="container">
     <%= f.submit class: "btn btn-primary"%>
   </div>
