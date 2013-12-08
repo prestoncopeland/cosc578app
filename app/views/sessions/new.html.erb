@@ -1,13 +1,9 @@
+<div class="container">
 <h1>New Session</h1>
 
-<h4 class ="container">A new session requires a
-<ul>
-  <li>student ID, <%= link_to "find the student's ID", students_search_path %>
-    </li>
-    <li>tutor ID, <%= link_to "find the tutor's ID", employees_search_path %>
-  </ul>
-</h4>
+
 
 <%= render 'form' %>
 
 <%= link_to 'List Sessions', sessions_path %>
+</div>

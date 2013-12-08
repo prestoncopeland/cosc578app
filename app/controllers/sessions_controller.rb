@@ -15,6 +15,8 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @students = Student.pluck(:nickname, :id)
+    @employees = Employee.pluck(:first_name, :id)
 
   end
 

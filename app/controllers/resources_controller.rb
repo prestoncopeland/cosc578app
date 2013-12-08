@@ -69,6 +69,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:title, :subject, :pages, :publication_year, :purchase_date)
+      params.require(:resource).permit(:title, :subject, :receipt_number, :pages, :publication_year, :purchase_date)
     end
 end

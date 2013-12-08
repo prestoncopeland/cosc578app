@@ -1,15 +1,19 @@
 class Student < ActiveRecord::Base
 
   def self.search_by_full_name(first, last)
-    Student.where("first_name LIKE ? OR last_name LIKE ? OR first_name LIKE ? OR last_name LIKE ?", first, last, last, first)
+    Student.where("first_name LIKE ? OR last_name LIKE ? OR first_name LIKE ? OR last_name LIKE ?", first.downcase, last.downcase, last.downcase, first.downcase)
   end
 
   def self.search_by_nickname(nickname)
-    Student.where("nickname LIKE ?", nickname).first
+    Student.where("nickname LIKE ?", nickname.downcase).first
   end
 
   def hours_remaining?
     return(contract.remaining_hours > 0)
+  end
+
+  def hours_used
+    return(contract.used_hours)
   end
 
   has_many :books
@@ -25,7 +29,7 @@ class Student < ActiveRecord::Base
 
   has_one :contract
 
-  has_many :daily_data_payments, through: :contracts
+  has_many :daily_data_payments
 
 
    has_many :student_hour_transfers_as_student_to, :class_name => 'StudentHourTransfer', :foreign_key => 'student_to_id'

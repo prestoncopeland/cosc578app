@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207061344) do
+ActiveRecord::Schema.define(version: 20131208210440) do
 
   create_table "books", force: true do |t|
     t.string   "book_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "student_id"
+    t.string   "receipt_number"
   end
 
   create_table "contracts", force: true do |t|
@@ -57,8 +58,6 @@ ActiveRecord::Schema.define(version: 20131207061344) do
 
   create_table "daily_data_payments", force: true do |t|
     t.date     "date"
-    t.string   "daily_data_paymentable_type"
-    t.integer  "daily_data_paymentable_id"
     t.decimal  "amount"
     t.string   "payment_type"
     t.boolean  "partial_payment"
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 20131207061344) do
     t.decimal  "hours"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "student_id"
   end
 
   create_table "employee_contracts", force: true do |t|
@@ -100,11 +100,11 @@ ActiveRecord::Schema.define(version: 20131207061344) do
     t.string   "cell_phone"
     t.string   "email"
     t.text     "career_goals"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "job_category"
     t.boolean  "is_active"
+    t.string   "category"
   end
 
   create_table "guardians", force: true do |t|
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20131207061344) do
     t.date     "purchase_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "receipt_number"
   end
 
   create_table "schools", force: true do |t|
@@ -172,16 +173,15 @@ ActiveRecord::Schema.define(version: 20131207061344) do
     t.decimal  "hours"
     t.date     "date"
     t.integer  "student_id"
-    t.integer  "tutor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
     t.boolean  "not_work_session"
+    t.integer  "employee_id"
   end
 
   add_index "sessions", ["student_id"], name: "index_sessions_on_student_id"
-  add_index "sessions", ["tutor_id"], name: "index_sessions_on_tutor_id"
 
   create_table "siblings", force: true do |t|
     t.string   "first_name"
@@ -245,6 +245,7 @@ ActiveRecord::Schema.define(version: 20131207061344) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "date_purchased"
+    t.string   "receipt_number"
   end
 
   create_table "tutors_subjects", force: true do |t|

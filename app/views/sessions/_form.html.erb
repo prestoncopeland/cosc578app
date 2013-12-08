@@ -11,33 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :hours %><br>
     <%= f.text_field :hours %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :start_time %><br>
     <%= f.time_select :start_time %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :end_time %><br>
     <%= f.time_select :end_time %>
   </div>
-  <div class="field">
+  <div class="container">
     <%= f.label :not_work_session, 'Not a work session?' %><br>
     <%= f.check_box :not_work_session %>
   </div>
-  <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.text_field :student_id %>
+  <div class="container">
+    <%= f.label :student_id, 'Student'%><br>
+    <%= f.select :student_id, options_for_select(@students) %>
   </div>
-  <div class="field">
-    <%= f.label :tutor_id %><br>
-    <%= f.text_field :tutor_id %>
+  <div class="container">
+    <%= f.label :employee_id, 'Employee'%><br>
+    <%= f.select :employee_id, options_for_select(@employees) %>
   </div>
   <div class="container">
     <%= f.submit class: "btn btn-primary" %>

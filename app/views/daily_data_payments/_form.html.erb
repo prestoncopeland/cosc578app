@@ -16,12 +16,8 @@
     <%= f.date_select :date %>
   </div>
   <div class="container">
-    <%= f.label :daily_data_paymentable_type, 'Daily data type (Contract, Resource, Book)' %><br>
-    <%= f.text_field :daily_data_paymentable_type %>
-  </div>
-  <div class="container">
-    <%= f.label :daily_data_paymentable_id, 'ID (contract, resource, book)' %><br>
-    <%= f.number_field :daily_data_paymentable_id %>
+    <%= f.label :student_id, 'Student'%><br>
+    <%= f.select :student_id, options_for_select(@students) %>
   </div>
   <div class="container">
     <%= f.label :amount %><br>
@@ -29,20 +25,22 @@
   </div>
   <div class="container">
     <%= f.label :payment_type %><br>
-    <%= f.text_field :payment_type %>
+    <%= f.select :payment_type, options_for_select(@payment_types) %>
   </div>
   <div class="container">
     <%= f.label :partial_payment, 'Partial payment(check for yes)' %><br>
     <%= f.check_box :partial_payment %>
   </div>
+
   <div class="container">
     <%= f.label :referral_source %><br>
-    <%= f.text_field :referral_source %>
+    <%= f.select :referral_source, options_for_select(@referral_sources) %>
   </div>
   <div class="container">
     <%= f.label :student_action %><br>
-    <%= f.text_field :student_action %>
+    <%= f.select :student_action, options_for_select(@student_actions) %>
   </div>
+
   <div class="container">
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>

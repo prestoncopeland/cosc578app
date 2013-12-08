@@ -1,3 +1,5 @@
+<div class = "container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,13 +8,8 @@
 </p>
 
 <p>
-  <strong>Daily data paymentable type:</strong>
-  <%= @daily_data_payment.daily_data_paymentable_type %>
-</p>
-
-<p>
-  <strong>Daily data paymentable:</strong>
-  <%= @daily_data_payment.daily_data_paymentable_id %>
+  <strong>Student:</strong>
+  <%= @student.nickname %>
 </p>
 
 <p>
@@ -57,3 +54,5 @@
 
 <%= link_to 'Edit', edit_daily_data_payment_path(@daily_data_payment) %> |
 <%= link_to 'List Daily Data Payments', daily_data_payments_path %>
+
+</div>

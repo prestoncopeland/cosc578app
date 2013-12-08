@@ -8,6 +8,8 @@ Cosc578app::Application.routes.draw do
   post 'student_searches/remaining_hours' => 'student_searches#remaining_hours'
   post 'student_searches/used_hours_over_time_period' => 'student_searches#used_hours_over_time_period'
   post 'student_searches/student_payments' => 'student_searches#student_payments'
+  post 'student_searches/group_hours' => 'student_searches#group_hours'
+  get 'student_searches/student_relatives' => 'student_searches#student_relatives'
 
   get 'static_pages/about' => 'static_pages#about'
 

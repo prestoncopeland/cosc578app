@@ -72,12 +72,16 @@
     <%= f.text_field :email %>
   </div>
   <div class="container">
+    <%= f.label :is_active, 'Is active?(check for yes)' %><br>
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="container">
     <%= f.label :career_goals %><br>
     <%= f.text_area :career_goals %>
   </div>
   <div class="container">
-    <%= f.label :type %> <span style="font-weight: bold">(Tutor, Staff, Applicant)</span><br>
-    <%= f.text_field :type %>
+    <%= f.label :category  %><br>
+    <%= f.select :category, options_for_select(%w[Tutor Staff Director]) %>
   </div>
   <div class="container">
     <%= f.submit class: "btn btn-primary"%>

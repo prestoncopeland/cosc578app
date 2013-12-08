@@ -33,7 +33,7 @@
 
 <p>
   <strong>Tutor:</strong>
-  <%= Employee.find(@session.tutor_id).first_name %>
+  <%= Employee.find(@session.employee_id).first_name %>
 </p>
 
 <%= link_to 'Edit', edit_session_path(@session) %> |

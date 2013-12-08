@@ -1,0 +1,25 @@
+<%= form_tag({ :controller => 'student_searches', :action => 'group_hours'}, :method => 'post', class: "container") do %>
+      <h4>List used hours for up to five students</h4>
+      <%= label_tag(:nickname1, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname1, params[:nickname1] %>
+      <br/>
+      <%= label_tag(:nickname2, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname2, params[:nickname2] %>
+      <br/>
+      <%= label_tag(:nickname3, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname3, params[:nickname3] %>
+      <br/>
+      <%= label_tag(:nickname4, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname4, params[:nickname4] %>
+      <br/>
+      <%= label_tag(:nickname5, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname5, params[:nickname5] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary', :name => nil %>
+
+  <% end %>

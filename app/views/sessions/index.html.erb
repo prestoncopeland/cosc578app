@@ -20,7 +20,7 @@
   <tbody>
     <% @sessions.each do |session| %>
       <tr> <% student = Student.find(session.student_id) %>
-        <% tutor = Employee.find(session.tutor_id) %>
+        <% tutor = Employee.find(session.employee_id) %>
         <td><%= session.hours %></td>
         <td><%= session.date %></td>
         <td><%= session.start_time %></td>

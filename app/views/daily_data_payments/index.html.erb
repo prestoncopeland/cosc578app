@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Date</th>
-      <th>Daily data type</th>
-      <th>Daily data type ID</th>
+      <th>Student</th>
       <th>Amount</th>
       <th>Payment type</th>
       <th>Partial payment</th>
@@ -23,9 +22,9 @@
   <tbody>
     <% @daily_data_payments.each do |daily_data_payment| %>
       <tr>
+        <% @student = Student.find(daily_data_payment.student_id) %>
         <td><%= daily_data_payment.date %></td>
-        <td><%= daily_data_payment.daily_data_paymentable_type %></td>
-        <td><%= daily_data_payment.daily_data_paymentable_id %></td>
+        <td><%= @student.nickname%></td>
         <td><%= daily_data_payment.amount %></td>
         <td><%= daily_data_payment.payment_type %></td>
         <td><%= daily_data_payment.partial_payment %></td>
@@ -44,4 +43,4 @@
 
 <br>
 
-<%= link_to 'New Daily data payment', new_daily_data_payment_path %>
+<%= link_to 'New Daily Data Payment', new_daily_data_payment_path %>
