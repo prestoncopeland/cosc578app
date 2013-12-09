@@ -1,0 +1,9 @@
+<%= form_tag({ :controller => 'resource_searches', :action => 'find_books_by_student'}, :method => 'post', class: "container") do %>
+      <h4>List the books purchased by a student</h4>
+      <%= label_tag(:nickname, "Enter the student's nickname") %>
+
+      <%= text_field_tag :nickname, params[:nickname] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

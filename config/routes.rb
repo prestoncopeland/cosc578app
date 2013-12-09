@@ -8,6 +8,9 @@ Cosc578app::Application.routes.draw do
   post 'resource_searches/find_resource_by_title' => 'resource_searches#find_resource_by_title'
   post 'resource_searches/find_resource_by_receipt_number' => 'resource_searches#find_resource_by_receipt_number'
   post 'resource_searches/find_school_by_name' => 'resource_searches#find_school_by_name'
+  post 'resource_searches/find_school_by_student' => 'resource_searches#find_school_by_student'
+  post 'resource_searches/find_students_at_school' => 'resource_searches#find_students_at_school'
+  post 'resource_searches/find_books_by_student' => 'resource_searches#find_books_by_student'
 
   get 'student_searches' => 'student_searches#index'
   post 'student_searches/remaining_hours' => 'student_searches#remaining_hours'

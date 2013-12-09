@@ -36,6 +36,10 @@
     <%= f.label :grade %><br>
     <%= f.text_field :grade %>
   </div>
+  <div class ="container">
+    <%= label_tag(:school_id, "School") %><br>
+    <%= select_tag(:school_id, options_for_select(@schools)) %>
+  </div>
   <div class="container">
     <%= f.label :ethnicity %><br>
     <%= f.text_field :ethnicity %>

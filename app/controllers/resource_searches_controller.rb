@@ -20,23 +20,38 @@ class ResourceSearchesController < ApplicationController
     @resources = Resource.find_by_receipt_number(params[:receipt_number])
   end
 
+  def list_schools
+  end
+
   def search_school_by_name
   end
 
   def find_school_by_name
-    @schools = School.find_by_name(params[:school_name])
+    @school = School.find_by_name(params[:school_name])
+  end
+
+  def search_school_by_student
   end
 
   def find_school_by_student
+    @student = Student.find_by_nickname(params[:nickname])
+    @schools = @student.schools
   end
 
-  def list_students_at_school
+  def search_students_at_school
   end
 
-  def list_schools
+  def find_students_at_school
+    @school = School.find_by_name(params[:school_name])
+    @students = @school.students
+  end
+
+  def search_books_by_student
   end
 
   def find_books_by_student
+    @student = Student.find_by_nickname(params[:nickname])
+    @books = @student.books
   end
 
 end

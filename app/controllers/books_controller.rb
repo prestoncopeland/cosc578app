@@ -15,10 +15,12 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @students = Student.pluck(:nickname, :id)
   end
 
   # GET /books/1/edit
   def edit
+    @students = Student.pluck(:nickname, :id)
   end
 
   # POST /books
@@ -69,6 +71,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:book_name)
+      params.require(:book).permit(:book_name, :student_id, :receipt_number)
     end
 end

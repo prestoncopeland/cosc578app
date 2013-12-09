@@ -1,4 +1,22 @@
 class Student < ActiveRecord::Base
+  before_save :default_values
+
+  def default_values
+    self.first_name ||= ""
+    self.middle_name ||= ""
+    self.last_name ||= ""
+    self.nickname ||= ""
+    self.birthdate ||= Date.today
+    self.grade ||= ""
+    self.ethnicity ||= ""
+    self.street ||= ""
+    self.city ||= ""
+    self.zip ||= 0
+    self.email ||= ""
+    self.phone ||= ""
+    self.is_active = true if self.is_active.nil?
+    self.program_goals ||= ""
+  end
 
   def self.search_by_full_name(first, last)
     Student.where("first_name LIKE ? OR last_name LIKE ? OR first_name LIKE ? OR last_name LIKE ?", first.downcase, last.downcase, last.downcase, first.downcase)
@@ -9,11 +27,11 @@ class Student < ActiveRecord::Base
   end
 
   def hours_remaining?
-    return(contract.remaining_hours > 0)
+    return(self.contract.remaining_hours > 0)
   end
 
   def hours_used
-    return(contract.used_hours)
+    return(self.contract.used_hours)
   end
 
   has_many :books
@@ -22,12 +40,12 @@ class Student < ActiveRecord::Base
   has_many :guardians_students
 
   has_many :schools, through: :schools_students
-  has_many :schools_students
+  has_many :schools_students, dependent: :destroy
 
   has_many :siblings, through: :siblings_students
-  has_many :siblings_students
+  has_many :siblings_students, dependent: :destroy
 
-  has_one :contract
+  has_one :contract, dependent: :destroy
 
   has_many :daily_data_payments
 

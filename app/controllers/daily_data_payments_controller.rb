@@ -24,6 +24,10 @@ class DailyDataPaymentsController < ApplicationController
 
   # GET /daily_data_payments/1/edit
   def edit
+    @students = Student.pluck(:nickname, :id)
+    @payment_types = %w(CA CC CK FTV GC MO Online Other SLM Wire YTS YTS-12 YTS-6)
+    @referral_sources = ["billboard", "chusum libo", "friend", "Korea daily", "Korean directory", "Korean radio", "Korea Times", "KTN", "lawn sign", "mailing", "merchant visit", "other", "promotion", "saw facility", "SBS", "school event", "school paper"]
+    @student_actions = ["cancel", "no actions", "refund", "renewal", "conf. interim", "conf. student", "conf. telephone", "curriculum", "diagnostic conf.", "diagnostic test", "drop", "DT payment", "enroll other", "enroll referral", "interim test", "school event", "telephone inquiry"]
   end
 
   # POST /daily_data_payments

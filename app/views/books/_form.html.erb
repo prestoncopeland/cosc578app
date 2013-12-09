@@ -1,3 +1,4 @@
+<div class = "container">
 <%= form_for(@book) do |f| %>
   <% if @book.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
     <%= f.label :book_name %><br>
     <%= f.text_field :book_name %>
   </div>
-  <div class= "action">
-    <%= f.submit %>
+
+  <div class="container">
+    <%= f.label :student_id, 'Student'%><br>
+    <%= f.select :student_id, options_for_select(@students) %>
+  </div>
+
+  <div class="container">
+    <%= f.label :receipt_number %><br>
+    <%= f.text_field :receipt_number %>
+  </div>
+  <div class= "container">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+</div>

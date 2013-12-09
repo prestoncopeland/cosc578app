@@ -1,3 +1,5 @@
+<div class = "container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,5 +7,17 @@
   <%= @book.book_name %>
 </p>
 
+<p>
+  <strong>Student who purchased it:</strong>
+  <%= @book.student.nickname %>
+</p>
+
+<p>
+  <strong>Receipt number:</strong>
+  <%= @book.receipt_number %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'List Books', books_path %>
+
+</div>

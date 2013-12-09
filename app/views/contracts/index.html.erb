@@ -34,9 +34,10 @@
   <tbody>
     <% @contracts.each do |contract| %>
       <tr>
-        <td><%= contract.student.nickname %></td>
-        <td><%= contract.student.first_name %>
-            <%= contract.student.last_name %></td>
+        <%student = contract.student %>
+        <td><%= student.nickname %></td>
+        <td><%= student.first_name %>
+            <%= student.last_name %></td>
         <td><%= contract.date %></td>
         <td><%= contract.enrollment_date %></td>
      <!--   <td><%= contract.final_class_date %></td> -->

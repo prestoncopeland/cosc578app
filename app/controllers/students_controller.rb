@@ -10,15 +10,18 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @hours_remaining = (@student.contract.remaining_hours>0)
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @schools = School.pluck(:name, :id)
   end
 
   # GET /students/1/edit
   def edit
+    @schools = School.pluck(:name, :id)
   end
 
   # POST /students
@@ -28,6 +31,15 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
+        @schools_students = SchoolsStudent.new
+        @schools_students.student_id = @student.id
+        @schools_students.school_id = params[:school_id]
+        @schools_students.save!
+
+        @contract = Contract.new
+        @contract.student_id = @student.id
+        @contract.save!
+
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render action: 'show', status: :created, location: @student }
       else
