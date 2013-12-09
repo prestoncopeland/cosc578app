@@ -47,7 +47,7 @@ class Student < ActiveRecord::Base
 
   has_one :contract, dependent: :destroy
 
-  has_many :daily_data_payments
+  has_many :daily_data_payments, dependent: :destroy
 
 
    has_many :student_hour_transfers_as_student_to, :class_name => 'StudentHourTransfer', :foreign_key => 'student_to_id'

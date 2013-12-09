@@ -1,0 +1,17 @@
+<%= form_tag({ :controller => 'employee_searches', :action => 'find_indiv_hours_worked'}, :method => 'post', class: "container") do %>
+      <h4>Find the hours worked by an employee over a given time period</h4>
+      <%= label_tag(:nickname, "Enter employee's nickname") %>
+
+      <%= text_field_tag :nickname, params[:nickname], :id => 'search_field_1' %>
+      <br/>
+      <%= label_tag(:start_date, "Enter the starting date") %>
+      <br/>
+      <%= select_date Date.today, prefix: :start_date %>
+      <br/>
+       <%= label_tag(:end_date, "Enter the ending date") %>
+       <br/>
+      <%= select_date Date.today, prefix: :end_date %>
+
+      <%= submit_tag "Search", :class => 'container btn btn-primary', :name => nil %>
+
+  <% end %>

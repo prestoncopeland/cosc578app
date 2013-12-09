@@ -1,0 +1,7 @@
+<%= form_tag({ :controller => 'employee_searches', :action => 'find_active'}, :method => 'post', class: "container") do %>
+      <h4>Find all active employees</h4>
+
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

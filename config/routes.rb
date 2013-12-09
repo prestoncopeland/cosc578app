@@ -4,6 +4,10 @@ Cosc578app::Application.routes.draw do
 
   root 'static_pages#index'
 
+  get 'employee_searches' => 'employee_searches#index'
+  post 'employee_searches/find_emp' => 'employee_searches#find_emp'
+  post 'employee_searches/find_active' => 'employee_searches#find_active'
+  post 'employee_searches/find_indiv_hours_worked' => 'employee_searches#find_indiv_hours_worked'
   get 'resource_searches' => 'resource_searches#index'
   post 'resource_searches/find_resource_by_title' => 'resource_searches#find_resource_by_title'
   post 'resource_searches/find_resource_by_receipt_number' => 'resource_searches#find_resource_by_receipt_number'

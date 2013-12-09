@@ -1,0 +1,37 @@
+<div class = "container">
+<h1>Listing Sessions for Employee</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session[0] %></td>
+        <td><%= session[1] %></td>
+        <td><%= session[2] %></td>
+        <td><%= session[3] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Total hours worked: <%=@total_hours %> </h3>
+<br>
+
+<%= link_to 'New Session', new_session_path, class: "btn btn-primary" %>
+
+<br><br>
+<p><%= link_to 'More Employee Queries', employee_searches_path, class: "btn btn-primary" %>
+</p>
+
+</div>

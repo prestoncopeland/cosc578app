@@ -1,0 +1,9 @@
+<%= form_tag({ :controller => 'employee_searches', :action => 'find_emp'}, :method => 'post', class: "container") do %>
+      <h4>Find an employee by nickname</h4>
+      <%= label_tag(:nickname, "Enter the employee's nickname") %>
+
+      <%= text_field_tag :nickname, params[:nickname] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

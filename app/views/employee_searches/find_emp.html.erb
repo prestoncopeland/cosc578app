@@ -1,0 +1,69 @@
+<div class = "container">
+<h1>Search Result</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+    <!--  <th>Middle name</th> -->
+      <th>Last name</th>
+   <!--   <th>Nickname</th> -->
+      <th>Birthdate</th>
+      <th>Ssn</th>
+  <!--    <th>Ethnicity</th> -->
+  <!--    <th>Interview date</th> -->
+  <!--    <th>Street</th> -->
+  <!--    <th>City</th> -->
+  <!--    <th>State</th> -->
+  <!--    <th>Zip</th> -->
+      <th>Home phone</th>
+      <th>Cell phone</th>
+      <th>Email</th>
+  <!--    <th>Career goals</th> -->
+      <th>Category</th>
+      <th>Active?</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <tr>
+        <td><%= @employee.id %></td>
+        <td><%= @employee.first_name %></td>
+    <!--    <td><%= @employee.middle_name %></td> -->
+        <td><%= @employee.last_name %></td>
+    <!--    <td><%= @employee.nickname %></td> -->
+        <td><%= @employee.birthdate %></td>
+        <td><%= @employee.ssn %></td>
+    <!--    <td><%= @employee.ethnicity %></td> -->
+    <!--    <td><%= @employee.interview_date %></td> -->
+    <!--    <td><%= @employee.street %></td> -->
+    <!--    <td><%= @employee.city %></td> -->
+    <!--    <td><%= @employee.state %></td> -->
+    <!--    <td><%= @employee.zip %></td> -->
+        <td><%= @employee.home_phone %></td>
+        <td><%= @employee.cell_phone %></td>
+        <td><%= @employee.email %></td>
+     <!--   <td><%= @employee.career_goals %></td> -->
+        <td><%= @employee.category %></td>
+        <td><%= @employee.is_active %></td>
+        <td><%= link_to 'Show', @employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(@employee) %></td>
+        <td><%= link_to 'Destroy', @employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path, class: "btn btn-primary" %>
+
+<br><br>
+
+<p><%= link_to 'More Employee Queries', employee_searches_path, class: "btn btn-primary" %>
+</p>
+</div>
