@@ -29,10 +29,7 @@ class EmployeeSearchesController < ApplicationController
     @total_hours = @hours.sum
   end
 
-  def search_group_hours_worked
-  end
-
-  def find_group_hours_worked
+  def employee_contracts
   end
 
 end

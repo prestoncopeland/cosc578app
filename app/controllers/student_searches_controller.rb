@@ -35,8 +35,8 @@ class StudentSearchesController < ApplicationController
 
   def student_payments
     @student = Student.search_by_nickname(params[:nickname])
-    @payments_data = @student.contract.daily_data_payments.pluck(:date, :amount, :hours)
-    @payments = @student.contract.daily_data_payments.pluck(:amount)
+    @payments_data = @student.daily_data_payments.pluck(:date, :amount, :hours)
+    @payments = @student.daily_data_payments.pluck(:amount)
     @total = @payments.sum
   end
 
