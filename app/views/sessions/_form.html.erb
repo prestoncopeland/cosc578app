@@ -21,11 +21,11 @@
   </div>
   <div class="container">
     <%= f.label :start_time %><br>
-    <%= f.time_select :start_time %>
+    <%= f.datetime_select :start_time %>
   </div>
   <div class="container">
     <%= f.label :end_time %><br>
-    <%= f.time_select :end_time %>
+    <%= f.datetime_select :end_time %>
   </div>
   <div class="container">
     <%= f.label :not_work_session, 'Not a work session?' %><br>
@@ -39,6 +39,7 @@
     <%= f.label :employee_id, 'Employee'%><br>
     <%= f.select :employee_id, options_for_select(@employees) %>
   </div>
+  <br>
   <div class="container">
     <%= f.submit class: "btn btn-primary" %>
   </div>

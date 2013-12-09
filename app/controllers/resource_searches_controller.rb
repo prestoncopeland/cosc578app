@@ -11,6 +11,9 @@ class ResourceSearchesController < ApplicationController
 
   def find_resource_by_title
     @resources = Resource.find_by_title(params[:title])
+    if(@resources.nil?)
+      redirect_to action: :index
+    end
   end
 
   def search_resource_by_receipt_number
@@ -18,6 +21,9 @@ class ResourceSearchesController < ApplicationController
 
   def find_resource_by_receipt_number
     @resources = Resource.find_by_receipt_number(params[:receipt_number])
+    if(@resources.nil?)
+      redirect_to action: :index
+    end
   end
 
   def list_schools
@@ -28,6 +34,10 @@ class ResourceSearchesController < ApplicationController
 
   def find_school_by_name
     @school = School.find_by_name(params[:school_name])
+    if(@school.nil?)
+      redirect_to action: :index
+    else
+    end
   end
 
   def search_school_by_student
@@ -35,7 +45,11 @@ class ResourceSearchesController < ApplicationController
 
   def find_school_by_student
     @student = Student.find_by_nickname(params[:nickname])
-    @schools = @student.schools
+    if(@student.nil?)
+      redirect_to action: :index
+    else
+      @schools = @student.schools
+    end
   end
 
   def search_students_at_school
@@ -43,7 +57,11 @@ class ResourceSearchesController < ApplicationController
 
   def find_students_at_school
     @school = School.find_by_name(params[:school_name])
-    @students = @school.students
+    if(@school.nil?)
+      redirect_to action: :index
+    else
+      @students = @school.students
+    end
   end
 
   def search_books_by_student
@@ -51,7 +69,11 @@ class ResourceSearchesController < ApplicationController
 
   def find_books_by_student
     @student = Student.find_by_nickname(params[:nickname])
-    @books = @student.books
+    if(@student.nil?)
+      redirect_to action: :index
+    else
+      @books = @student.books
+    end
   end
 
 end
