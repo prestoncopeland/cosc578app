@@ -9,6 +9,16 @@ class StudentSearchesController < ApplicationController
   def student_relatives
   end
 
+  def find_siblings
+    @student = Student.search_by_nickname(params[:nickname])
+    @siblings = @student.siblings
+  end
+
+  def find_guardians
+    @student = Student.search_by_nickname(params[:nickname])
+    @guardians = @student.guardians
+  end
+
   def remaining_hours
     @student = Student.search_by_nickname(params[:nickname])
     @contract = Contract.find_by_student_id(@student.id)

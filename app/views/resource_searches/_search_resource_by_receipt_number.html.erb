@@ -1,0 +1,9 @@
+<%= form_tag({ :controller => 'resource_searches', :action => 'find_resource_by_receipt_number'}, :method => 'post', class: "container") do %>
+      <h4>Find a resource by receipt number</h4>
+      <%= label_tag(:receipt_number, "Enter the receipt number") %>
+
+      <%= text_field_tag :receipt_number, params[:receipt_number] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

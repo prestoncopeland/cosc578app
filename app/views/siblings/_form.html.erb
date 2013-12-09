@@ -23,7 +23,18 @@
     <%= f.label :grade %><br>
     <%= f.number_field :grade %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div>
+    <%= label_tag(:student_id, "Student") %><br>
+    <%= select_tag(:student_id, options_for_select(@students)) %>
+  </div>
+
+  <div>
+    <%= label_tag(:guardian_id, "Guardian") %><br>
+    <%= select_tag(:guardian_id, options_for_select(@guardians)) %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit class: "container btn btn-primary" %>
   </div>
 <% end %>

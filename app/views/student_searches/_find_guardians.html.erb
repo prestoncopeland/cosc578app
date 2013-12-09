@@ -1,0 +1,9 @@
+<%= form_tag({ :controller => 'student_searches', :action => 'find_guardians'}, :method => 'post', class: "container") do %>
+      <h4>List all of the parents/guardians of a student</h4>
+      <%= label_tag(:nickname, "Enter student's nickname") %>
+
+      <%= text_field_tag :nickname, params[:nickname] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

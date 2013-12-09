@@ -67,7 +67,7 @@ class DailyDataPaymentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+     #Use callbacks to share common setup or constraints between actions.
     def set_daily_data_payment
       @daily_data_payment = DailyDataPayment.find(params[:id])
     end

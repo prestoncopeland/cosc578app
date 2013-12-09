@@ -4,12 +4,20 @@ Cosc578app::Application.routes.draw do
 
   root 'static_pages#index'
 
+  get 'resource_searches' => 'resource_searches#index'
+  post 'resource_searches/find_resource_by_title' => 'resource_searches#find_resource_by_title'
+  post 'resource_searches/find_resource_by_receipt_number' => 'resource_searches#find_resource_by_receipt_number'
+  post 'resource_searches/find_school_by_name' => 'resource_searches#find_school_by_name'
+
   get 'student_searches' => 'student_searches#index'
   post 'student_searches/remaining_hours' => 'student_searches#remaining_hours'
   post 'student_searches/used_hours_over_time_period' => 'student_searches#used_hours_over_time_period'
   post 'student_searches/student_payments' => 'student_searches#student_payments'
   post 'student_searches/group_hours' => 'student_searches#group_hours'
+
   get 'student_searches/student_relatives' => 'student_searches#student_relatives'
+  post 'student_searches/find_guardians' => 'student_searches#find_guardians'
+  post 'student_searches/find_siblings' => 'student_searches#find_siblings'
 
   get 'static_pages/about' => 'static_pages#about'
 

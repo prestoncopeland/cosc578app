@@ -15,10 +15,14 @@ class SiblingsController < ApplicationController
   # GET /siblings/new
   def new
     @sibling = Sibling.new
+    @students = Student.pluck(:nickname, :id)
+    @guardians = Guardian.pluck(:first_name, :id)
   end
 
   # GET /siblings/1/edit
   def edit
+    @students = Student.pluck(:nickname, :id)
+    @guardians = Guardian.pluck(:first_name, :id)
   end
 
   # POST /siblings
@@ -28,6 +32,15 @@ class SiblingsController < ApplicationController
 
     respond_to do |format|
       if @sibling.save
+        @guardians_siblings = GuardiansSibling.new
+        @guardians_siblings.sibling_id = @sibling.id
+        @guardians_siblings.guardian_id = params[:guardian_id]
+        @guardians_siblings.save!
+
+        @siblings_students = SiblingsStudent.new
+        @siblings_students.sibling_id = @sibling.id
+        @siblings_students.student_id = params[:student_id]
+        @siblings_students.save!
         format.html { redirect_to @sibling, notice: 'Sibling was successfully created.' }
         format.json { render action: 'show', status: :created, location: @sibling }
       else

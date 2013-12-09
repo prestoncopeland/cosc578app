@@ -1,3 +1,4 @@
+<div class = "container">
 <%= form_for(@school) do |f| %>
   <% if @school.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +24,9 @@
     <%= f.label :contact_phone %><br>
     <%= f.text_field :contact_phone %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="container">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+</div>

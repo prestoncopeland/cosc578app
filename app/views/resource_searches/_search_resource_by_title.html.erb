@@ -1,0 +1,9 @@
+<%= form_tag({ :controller => 'resource_searches', :action => 'find_resource_by_title'}, :method => 'post', class: "container") do %>
+      <h4>Find a resource by title</h4>
+      <%= label_tag(:title, "Enter the title") %>
+      <br/>
+      <%= text_field_tag :title, params[:title] %>
+      <br/>
+      <%= submit_tag "Search", :class => 'container btn btn-primary' %>
+
+  <% end %>

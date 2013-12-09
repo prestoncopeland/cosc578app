@@ -1,9 +1,41 @@
 <h1 class = "container">Student Relatives</h1>
 <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <%= render 'find_guardians' %>
+
+        <br>
+
+        <%= render 'guardians' %>
+
+        <br><br>
+
+        <p class = "container"><%= link_to 'More Student Queries', student_searches_path, class: "btn btn-primary" %>
+        </p>
 
       </div>
+
        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 
+        <%= render 'find_siblings' %>
+
+        <br>
+
+        <%= render 'siblings' %>
+
       </div>
+
+       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="thumbnail">
+        <!-- IMAGE CONTAINER-->
+        <img src="http://www.evolllution.com/wp-content/uploads/2013/07/Busy-Student.jpg" alt="">
+        <div style= "text-align:center;">
+        <%= link_to 'List students', students_path, :class => 'container btn btn-primary'%>
+        </div>
+
+      </div>
+
+
+       </div>
+
+
 </div>

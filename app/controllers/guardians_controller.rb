@@ -15,10 +15,12 @@ class GuardiansController < ApplicationController
   # GET /guardians/new
   def new
     @guardian = Guardian.new
+    @students = Student.pluck(:nickname, :id)
   end
 
   # GET /guardians/1/edit
   def edit
+    @students = Student.pluck(:nickname, :id)
   end
 
   # POST /guardians
@@ -28,6 +30,10 @@ class GuardiansController < ApplicationController
 
     respond_to do |format|
       if @guardian.save
+        @guardians_students = GuardiansStudent.new
+        @guardians_students.guardian_id = @guardian.id
+        @guardians_students.student_id = params[:student_id]
+        @guardians_students.save!
         format.html { redirect_to @guardian, notice: 'Guardian was successfully created.' }
         format.json { render action: 'show', status: :created, location: @guardian }
       else

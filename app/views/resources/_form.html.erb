@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@resource) do |f| %>
   <% if @resource.errors.any? %>
     <div id="error_explanation">
@@ -35,7 +36,9 @@
     <%= f.label :purchase_date %><br>
     <%= f.date_select :purchase_date, :start_year => 2000 %>
   </div>
+  <br>
   <div class="container">
     <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>
+</div>
